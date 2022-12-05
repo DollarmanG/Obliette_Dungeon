@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GrabInteractebleOskar : MonoBehaviour
 {
+    [SerializeField] private Transform teleportTo;
+    [SerializeField] private Transform startPosistion;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +16,10 @@ public class GrabInteractebleOskar : MonoBehaviour
     void Update()
     {
         
+    }
+    public void TeleportBack()
+    {
+        startPosistion.position = teleportTo.position;
+        startPosistion.rotation = teleportTo.rotation;
     }
 }
