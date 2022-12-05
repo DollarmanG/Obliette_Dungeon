@@ -20,7 +20,8 @@ namespace rockfall
         [SerializeField]
         private XRRayInteractor rightHandRayInteractor;
 
-        bool doubleHoverHaptics;
+        // Used to double hover haptic values only between the first and second time user selects rockfall.
+        bool doubleHoverHaptics; 
 
         // Index of three possible states:
         // 1. Player has not yet caused a rockfall
@@ -37,6 +38,7 @@ namespace rockfall
         // Start is called before the first frame update
         void Start()
         {
+            // Haptic values are not allowed to double at start
             doubleHoverHaptics = false;
 
         }
@@ -45,43 +47,29 @@ namespace rockfall
         void Update()
         {
             
-            //Debug.Log($"State count = {stateCount}");
+            
         }
 
         protected override void OnHoverEntered(HoverEnterEventArgs args)
         {
             base.OnHoverEntered(args);
 
-            if (hoverCount == 0 && stateCount < 2)
+            // The first time user hovers over rockfall, trigger dialogue.
+            if (hoverCount == 0)
             {
                 Debug.Log("Hmmm... the foundation seems cracked here.");
 
-                Debug.Log("leftHandRayInteractor.hapticHoverEnterDuration = " + leftHandRayInteractor.hapticHoverEnterDuration);
-                Debug.Log("rightHandRayInteractor.hapticHoverEnterDuration = " + rightHandRayInteractor.hapticHoverEnterDuration);
-                Debug.Log("leftHandRayInteractor.hapticHoverEnterIntensity = " + leftHandRayInteractor.hapticHoverEnterIntensity);
-                Debug.Log("rightHandRayInteractor.hapticHoverEnterIntensity = " + rightHandRayInteractor.hapticHoverEnterIntensity);
                 hoverCount++;
             }
 
-            if (doubleHoverHaptics && hoverCount > 0 && stateCount > 0 && stateCount < 2)
-            {
-                leftHandRayInteractor.hapticHoverEnterDuration = leftHandRayInteractor.hapticHoverEnterDuration * 2;
-                rightHandRayInteractor.hapticHoverEnterDuration = rightHandRayInteractor.hapticHoverEnterDuration * 2;
-                leftHandRayInteractor.hapticHoverEnterIntensity = leftHandRayInteractor.hapticHoverEnterIntensity * 2;
-                rightHandRayInteractor.hapticHoverEnterIntensity = rightHandRayInteractor.hapticHoverEnterIntensity * 2;
-
-                doubleHoverHaptics = false;
-
-                Debug.Log("leftHandRayInteractor.hapticHoverEnterDuration = " + leftHandRayInteractor.hapticHoverEnterDuration);
-                Debug.Log("rightHandRayInteractor.hapticHoverEnterDuration = " + rightHandRayInteractor.hapticHoverEnterDuration);
-                Debug.Log("leftHandRayInteractor.hapticHoverEnterIntensity = " + leftHandRayInteractor.hapticHoverEnterIntensity);
-                Debug.Log("rightHandRayInteractor.hapticHoverEnterIntensity = " + rightHandRayInteractor.hapticHoverEnterIntensity);
-            }
         }
 
         protected override void OnSelectEntered(SelectEnterEventArgs args)
         {
             base.OnSelectEntered(args);
+
+            // The first time user selects rockfall, raise the value of the selction haptics, go to the next state and
+            // allow the doubling of hover haptics.
 
             if (stateCount == 0)
             {
@@ -92,13 +80,12 @@ namespace rockfall
                 leftHandRayInteractor.hapticSelectEnterIntensity = 1.0f;
                 rightHandRayInteractor.hapticSelectEnterIntensity = 1.0f;
 
-                Debug.Log("leftHandRayInteractor.hapticSelectEnterDuration = " + leftHandRayInteractor.hapticSelectEnterDuration);
-                Debug.Log("rightHandRayInteractor.hapticSelectEnterDuration = " + rightHandRayInteractor.hapticSelectEnterDuration);
-                Debug.Log("leftHandRayInteractor.hapticSelectEnterIntensity = " + leftHandRayInteractor.hapticSelectEnterIntensity);
-                Debug.Log("rightHandRayInteractor.hapticSelectEnterIntensity = " + rightHandRayInteractor.hapticSelectEnterIntensity);
+                leftHandRayInteractor.hapticHoverEnterDuration = leftHandRayInteractor.hapticHoverEnterDuration * 2;
+                rightHandRayInteractor.hapticHoverEnterDuration = rightHandRayInteractor.hapticHoverEnterDuration * 2;
+                leftHandRayInteractor.hapticHoverEnterIntensity = leftHandRayInteractor.hapticHoverEnterIntensity * 2;
+                rightHandRayInteractor.hapticHoverEnterIntensity = rightHandRayInteractor.hapticHoverEnterIntensity * 2;
 
                 stateCount++;
-                doubleHoverHaptics = true;
             }
             else if (stateCount == 1)
             {
@@ -113,16 +100,6 @@ namespace rockfall
                 rightHandRayInteractor.hapticSelectEnterDuration = 0.0f;
                 leftHandRayInteractor.hapticSelectEnterIntensity = 0.0f;
                 rightHandRayInteractor.hapticSelectEnterIntensity = 0.0f;
-
-                Debug.Log("leftHandRayInteractor.hapticHoverEnterDuration = " + leftHandRayInteractor.hapticHoverEnterDuration);
-                Debug.Log("rightHandRayInteractor.hapticHoverEnterDuration = " + rightHandRayInteractor.hapticHoverEnterDuration);
-                Debug.Log("leftHandRayInteractor.hapticHoverEnterIntensity = " + leftHandRayInteractor.hapticHoverEnterIntensity);
-                Debug.Log("rightHandRayInteractor.hapticHoverEnterIntensity = " + rightHandRayInteractor.hapticHoverEnterIntensity);
-
-                Debug.Log("leftHandRayInteractor.hapticSelectEnterDuration = " + leftHandRayInteractor.hapticSelectEnterDuration);
-                Debug.Log("rightHandRayInteractor.hapticSelectEnterDuration = " + rightHandRayInteractor.hapticSelectEnterDuration);
-                Debug.Log("leftHandRayInteractor.hapticSelectEnterIntensity = " + leftHandRayInteractor.hapticSelectEnterIntensity);
-                Debug.Log("rightHandRayInteractor.hapticSelectEnterIntensity = " + rightHandRayInteractor.hapticSelectEnterIntensity);
 
                 stateCount++;
             }
