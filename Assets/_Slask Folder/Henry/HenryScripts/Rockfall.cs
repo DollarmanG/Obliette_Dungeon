@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Filtering;
 using dialogue;
+using System.Runtime.CompilerServices;
 
 namespace rockfall
 {
@@ -21,7 +22,6 @@ namespace rockfall
         private XRRayInteractor rightHandRayInteractor;
 
         // Used to double hover haptic values only between the first and second time user selects rockfall.
-        bool doubleHoverHaptics; 
 
         // Index of three possible states:
         // 1. Player has not yet caused a rockfall
@@ -35,11 +35,24 @@ namespace rockfall
         // Int to keep track of how many times player has hovered over game object.
         int hoverCount = 0;
 
+        // Declare variable of type mesh renderer.
+        // Use this mesh renderer to change the material of this game object
+        MeshRenderer meshRenderer;
+
+        // Declare variable of type RockfallMaterials
+        // References RockfallMaterials component attached to this game object
+        // Use this to pull a new material from array of materials.
+        public RockfallMaterials rockfallMaterials;
+
         // Start is called before the first frame update
         void Start()
         {
-            // Haptic values are not allowed to double at start
-            doubleHoverHaptics = false;
+            // Set rockfallMeshrenderer variable equal to this game object's mesh renderer
+            meshRenderer = GetComponent<MeshRenderer>();
+
+            // Set this game object's first material equal to the first material in
+            // rockfallMaterials array attached to this game object.
+            meshRenderer.material = rockfallMaterials.setStateMaterial(0);
 
         }
 
@@ -75,6 +88,8 @@ namespace rockfall
             {
                 Debug.Log("You have selected the item for the first time. Switching to second state");
 
+                meshRenderer.material = rockfallMaterials.setStateMaterial(1);
+
                 leftHandRayInteractor.hapticSelectEnterDuration = 2.0f;
                 rightHandRayInteractor.hapticSelectEnterDuration = 2.0f;
                 leftHandRayInteractor.hapticSelectEnterIntensity = 1.0f;
@@ -90,6 +105,8 @@ namespace rockfall
             else if (stateCount == 1)
             {
                 Debug.Log("You have selected the item for the second time. Switching to third state and removing all selection haptics.");
+
+                meshRenderer.material = rockfallMaterials.setStateMaterial(2);
 
                 leftHandRayInteractor.hapticHoverEnterDuration = 0.0f;
                 rightHandRayInteractor.hapticHoverEnterDuration = 0.0f;
