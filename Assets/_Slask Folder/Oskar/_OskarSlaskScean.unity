@@ -355,6 +355,7 @@ MonoBehaviour:
   teleportTo: {fileID: 621580514}
   startPosistion: {fileID: 281495533}
   rb: {fileID: 281495534}
+  Handler: {fileID: 281495532}
   HandlerRB: {fileID: 621580511}
 --- !u!64 &281495539
 MeshCollider:

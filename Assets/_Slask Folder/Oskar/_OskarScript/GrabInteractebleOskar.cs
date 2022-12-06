@@ -7,6 +7,7 @@ public class GrabInteractebleOskar : MonoBehaviour
     [SerializeField] private Transform teleportTo;
     [SerializeField] private Transform startPosistion;
     public Rigidbody rb;
+    [SerializeField] private GameObject Handler;
     [SerializeField] private Rigidbody HandlerRB;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,12 @@ public class GrabInteractebleOskar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        float distance = Vector3.Distance(teleportTo.position, startPosistion.position);
+        if(distance > 0.4)
+        {
+            Handler.SetActive(false);
+            Handler.SetActive(true);
+        }
     }
     public void TeleportBack()
     {
