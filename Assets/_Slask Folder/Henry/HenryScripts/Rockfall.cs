@@ -21,6 +21,14 @@ namespace rockfall
         [SerializeField]
         private XRRayInteractor rightHandRayInteractor;
 
+        // References to particle systems
+        [SerializeField]
+        ParticleSystem dustParticlesStateZero;
+
+        [SerializeField]
+        ParticleSystem dustParticlesStateOne;
+
+
         // Used to double hover haptic values only between the first and second time user selects rockfall.
 
         // Index of three possible states:
@@ -54,6 +62,10 @@ namespace rockfall
             // rockfallMaterials array attached to this game object.
             meshRenderer.material = rockfallMaterials.setStateMaterial(0);
 
+            // Disable debris particle effects at start
+            dustParticlesStateZero.Stop();
+            dustParticlesStateOne.Stop();
+
         }
 
         // Update is called once per frame
@@ -67,12 +79,27 @@ namespace rockfall
         {
             base.OnHoverEntered(args);
 
-            // The first time user hovers over rockfall, trigger dialogue.
+            // The first time user hovers over rockfall, trigger dialogue and enable state zero particle effect.
             if (hoverCount == 0)
             {
                 Debug.Log("Hmmm... the foundation seems cracked here.");
 
+                // Set state zero particle effect to active.
+                dustParticlesStateZero.Play();
+
+                // Raise hover count by one.
                 hoverCount++;
+            }
+
+            // Every time user hovers, after the first hover and before first select, enable state zero particle effect.
+            if (hoverCount > 0 && stateCount == 0)
+            {
+                dustParticlesStateZero.Play();
+            }
+
+            if (hoverCount > 0 && stateCount == 1)
+            {
+                dustParticlesStateOne.Play();
             }
 
         }
@@ -88,26 +115,37 @@ namespace rockfall
             {
                 Debug.Log("You have selected the item for the first time. Switching to second state");
 
+                dustParticlesStateZero.Stop();
+                dustParticlesStateOne.Play();
+
+                // Change to state one material.
                 meshRenderer.material = rockfallMaterials.setStateMaterial(1);
 
+                //Increase intensity of selection haptics
                 leftHandRayInteractor.hapticSelectEnterDuration = 2.0f;
                 rightHandRayInteractor.hapticSelectEnterDuration = 2.0f;
                 leftHandRayInteractor.hapticSelectEnterIntensity = 1.0f;
                 rightHandRayInteractor.hapticSelectEnterIntensity = 1.0f;
 
+                // Double intensity of hover haptics.
                 leftHandRayInteractor.hapticHoverEnterDuration = leftHandRayInteractor.hapticHoverEnterDuration * 2;
                 rightHandRayInteractor.hapticHoverEnterDuration = rightHandRayInteractor.hapticHoverEnterDuration * 2;
                 leftHandRayInteractor.hapticHoverEnterIntensity = leftHandRayInteractor.hapticHoverEnterIntensity * 2;
                 rightHandRayInteractor.hapticHoverEnterIntensity = rightHandRayInteractor.hapticHoverEnterIntensity * 2;
 
+                // Raise the count of states by one.
                 stateCount++;
             }
             else if (stateCount == 1)
             {
                 Debug.Log("You have selected the item for the second time. Switching to third state and removing all selection haptics.");
 
+                dustParticlesStateOne.Stop();
+
+                // Change to state one material.
                 meshRenderer.material = rockfallMaterials.setStateMaterial(2);
 
+                // Remove all haptic feedback when interacting with rockfall (sequence complete).
                 leftHandRayInteractor.hapticHoverEnterDuration = 0.0f;
                 rightHandRayInteractor.hapticHoverEnterDuration = 0.0f;
                 leftHandRayInteractor.hapticHoverEnterIntensity = 0.0f;
@@ -118,6 +156,7 @@ namespace rockfall
                 leftHandRayInteractor.hapticSelectEnterIntensity = 0.0f;
                 rightHandRayInteractor.hapticSelectEnterIntensity = 0.0f;
 
+                // Raise count of state by one.
                 stateCount++;
             }
         }

@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using rockfall;
 
-
+namespace rockfall
+{
     public class RockfallMaterials : MonoBehaviour
     {
         [SerializeField]
@@ -14,4 +14,7 @@ using rockfall;
             return rockfallStateMaterials[materialIndex];
         }
     }
+}
+
+    
 

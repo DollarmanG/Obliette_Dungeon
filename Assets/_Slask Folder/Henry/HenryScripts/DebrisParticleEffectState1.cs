@@ -5,7 +5,7 @@ using UnityEngine;
 namespace rockfall
 {
     [RequireComponent(typeof(ParticleSystem))]
-    public class DebrisParticleEffectState0 : MonoBehaviour
+    public class DebrisParticleEffectState1 : MonoBehaviour
     {
         // Reference to the transform of the rockfall game object.
         [SerializeField]
@@ -18,7 +18,7 @@ namespace rockfall
         float scaleTargetZ;
 
         // A particle system variable used to access this game object's particle system.
-        private ParticleSystem particleSystemStateZero;
+        private ParticleSystem particleSystemStateOne;
 
         // Start is called before the first frame update
         void Start()
@@ -29,10 +29,10 @@ namespace rockfall
             scaleTargetZ = rockfallTransform.localScale.z;
 
             // Set particle system variable equal to this game object's particle system.
-            particleSystemStateZero = GetComponent<ParticleSystem>();
+            particleSystemStateOne = GetComponent<ParticleSystem>();
 
             // Variable referring to the shape module of the particle system attached to this game object.
-            var sh = particleSystemStateZero.shape;
+            var sh = particleSystemStateOne.shape;
 
             // Set the x, y, and z values of the scale module of the particle system attached to this game object
             // equal to the x, y, and z values of the scale of the rockfall game object transform.
