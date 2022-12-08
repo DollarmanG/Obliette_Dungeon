@@ -23,11 +23,16 @@ namespace rockfall
 
         // References to particle systems
         [SerializeField]
-        ParticleSystem dustParticlesStateZero;
+        ParticleSystem debrisParticlesStateZero;
 
         [SerializeField]
-        ParticleSystem dustParticlesStateOne;
+        ParticleSystem debrisParticlesStateOne;
 
+        [SerializeField]
+        ParticleSystem dustParticleStateOne;
+        
+        [SerializeField]
+        ParticleSystem dustParticleStateTwo;
 
         // Used to double hover haptic values only between the first and second time user selects rockfall.
 
@@ -63,9 +68,10 @@ namespace rockfall
             meshRenderer.material = rockfallMaterials.setStateMaterial(0);
 
             // Disable debris particle effects at start
-            dustParticlesStateZero.Stop();
-            dustParticlesStateOne.Stop();
-
+            debrisParticlesStateZero.Stop();
+            debrisParticlesStateOne.Stop();
+            dustParticleStateOne.Stop();
+            dustParticleStateTwo.Stop();
         }
 
         // Update is called once per frame
@@ -85,7 +91,7 @@ namespace rockfall
                 Debug.Log("Hmmm... the foundation seems cracked here.");
 
                 // Set state zero particle effect to active.
-                dustParticlesStateZero.Play();
+                debrisParticlesStateZero.Play();
 
                 // Raise hover count by one.
                 hoverCount++;
@@ -94,12 +100,12 @@ namespace rockfall
             // Every time user hovers, after the first hover and before first select, enable state zero particle effect.
             if (hoverCount > 0 && stateCount == 0)
             {
-                dustParticlesStateZero.Play();
+                debrisParticlesStateZero.Play();
             }
 
             if (hoverCount > 0 && stateCount == 1)
             {
-                dustParticlesStateOne.Play();
+                debrisParticlesStateOne.Play();
             }
 
         }
@@ -115,8 +121,10 @@ namespace rockfall
             {
                 Debug.Log("You have selected the item for the first time. Switching to second state");
 
-                dustParticlesStateZero.Stop();
-                dustParticlesStateOne.Play();
+                debrisParticlesStateZero.Stop();
+                debrisParticlesStateOne.Play();
+
+                dustParticleStateOne.Play();
 
                 // Change to state one material.
                 meshRenderer.material = rockfallMaterials.setStateMaterial(1);
@@ -140,7 +148,8 @@ namespace rockfall
             {
                 Debug.Log("You have selected the item for the second time. Switching to third state and removing all selection haptics.");
 
-                dustParticlesStateOne.Stop();
+                debrisParticlesStateOne.Stop();
+                dustParticleStateTwo.Play();
 
                 // Change to state one material.
                 meshRenderer.material = rockfallMaterials.setStateMaterial(2);
