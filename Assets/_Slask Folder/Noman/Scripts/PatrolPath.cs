@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Gizmo
+namespace Gizmo.Patrol
 {
     public class PatrolPath : MonoBehaviour
     {
