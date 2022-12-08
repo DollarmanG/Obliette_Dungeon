@@ -6,9 +6,8 @@ using UnityEngine;
 
 public class FadeText : MonoBehaviour
 {
-    //[SerializeField] private Material material;
-    //[SerializeField] private Font font;
     [SerializeField] private TMP_FontAsset fontAsset;
+    [SerializeField][Range(-1,0)] private float dilateSpeed;
 
     void Start()
     {
@@ -18,8 +17,6 @@ public class FadeText : MonoBehaviour
     
     void Update()
     {
-        Debug.Log(fontAsset.material.GetFloat("_FaceDilate"));
-        //Debug.Log(font.material.GetFloat("_FaceDilate"));
-        //Debug.Log(material.GetFloat("_FaceDilate"));
+        dilateSpeed = fontAsset.material.GetFloat("_FaceDilate");
     }
 }
