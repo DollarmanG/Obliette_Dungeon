@@ -143,17 +143,17 @@ PrefabInstance:
     - target: {fileID: 5058642480447554067, guid: 37ac51fb8f137c34fbc13251fd08e168,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.83308
+      value: 32.56
       objectReference: {fileID: 0}
     - target: {fileID: 5058642480447554067, guid: 37ac51fb8f137c34fbc13251fd08e168,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.76
+      value: 4.01
       objectReference: {fileID: 0}
     - target: {fileID: 5058642480447554067, guid: 37ac51fb8f137c34fbc13251fd08e168,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.14
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 5058642480447554067, guid: 37ac51fb8f137c34fbc13251fd08e168,
         type: 3}
@@ -190,15 +190,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: leftHandRayInteractor
+      value: 
+      objectReference: {fileID: 1110413384}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: rightHandRayInteractor
+      value: 
+      objectReference: {fileID: 1032706768}
+    - target: {fileID: 5058642481205663832, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5.336466
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058642481205663832, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5058642481205663832, guid: 37ac51fb8f137c34fbc13251fd08e168,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.27
+      value: 0.0019
       objectReference: {fileID: 0}
     - target: {fileID: 5058642481205663832, guid: 37ac51fb8f137c34fbc13251fd08e168,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.07
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37ac51fb8f137c34fbc13251fd08e168, type: 3}
@@ -689,6 +709,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1492571898}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1032706768 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6174356718691180763, guid: 06be254c53b7d654796de97c1caa5974,
+    type: 3}
+  m_PrefabInstance: {fileID: 6174356717262743146}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6174356717262743147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1039130272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -801,8 +833,25 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3122423120560103402, guid: eb5a3ddfcc77d654cb6289e2f5e1e37d,
+        type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb5a3ddfcc77d654cb6289e2f5e1e37d, type: 3}
+--- !u!114 &1110413384 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6174356718089315596, guid: 06be254c53b7d654796de97c1caa5974,
+    type: 3}
+  m_PrefabInstance: {fileID: 6174356717262743146}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6174356717262743148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1263562887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1627,17 +1676,17 @@ PrefabInstance:
     - target: {fileID: 6174356716780273428, guid: 06be254c53b7d654796de97c1caa5974,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.34
+      value: 46.9
       objectReference: {fileID: 0}
     - target: {fileID: 6174356716780273428, guid: 06be254c53b7d654796de97c1caa5974,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.38
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 6174356716780273428, guid: 06be254c53b7d654796de97c1caa5974,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.39
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6174356716780273428, guid: 06be254c53b7d654796de97c1caa5974,
         type: 3}
@@ -1694,10 +1743,50 @@ PrefabInstance:
       propertyPath: m_RaycastMask.m_Bits
       value: 33558015
       objectReference: {fileID: 0}
+    - target: {fileID: 6174356718089315596, guid: 06be254c53b7d654796de97c1caa5974,
+        type: 3}
+      propertyPath: m_HapticHoverEnterDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174356718089315596, guid: 06be254c53b7d654796de97c1caa5974,
+        type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 3221225475
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174356718089315596, guid: 06be254c53b7d654796de97c1caa5974,
+        type: 3}
+      propertyPath: m_HapticHoverEnterIntensity
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174356718089315596, guid: 06be254c53b7d654796de97c1caa5974,
+        type: 3}
+      propertyPath: m_HapticSelectEnterDuration
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174356718089315596, guid: 06be254c53b7d654796de97c1caa5974,
+        type: 3}
+      propertyPath: m_PlayHapticsOnHoverEntered
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174356718089315596, guid: 06be254c53b7d654796de97c1caa5974,
+        type: 3}
+      propertyPath: m_HapticSelectEnterIntensity
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174356718089315596, guid: 06be254c53b7d654796de97c1caa5974,
+        type: 3}
+      propertyPath: m_PlayHapticsOnSelectEntered
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6174356718691180742, guid: 06be254c53b7d654796de97c1caa5974,
         type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174356718691180763, guid: 06be254c53b7d654796de97c1caa5974,
+        type: 3}
+      propertyPath: m_LineType
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6174356718691180763, guid: 06be254c53b7d654796de97c1caa5974,
         type: 3}
@@ -1709,9 +1798,54 @@ PrefabInstance:
       propertyPath: m_RaycastMask.m_Bits
       value: 33558015
       objectReference: {fileID: 0}
+    - target: {fileID: 6174356718691180763, guid: 06be254c53b7d654796de97c1caa5974,
+        type: 3}
+      propertyPath: m_HapticHoverEnterDuration
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174356718691180763, guid: 06be254c53b7d654796de97c1caa5974,
+        type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 3221225475
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174356718691180763, guid: 06be254c53b7d654796de97c1caa5974,
+        type: 3}
+      propertyPath: m_HapticHoverEnterIntensity
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174356718691180763, guid: 06be254c53b7d654796de97c1caa5974,
+        type: 3}
+      propertyPath: m_HapticSelectEnterDuration
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174356718691180763, guid: 06be254c53b7d654796de97c1caa5974,
+        type: 3}
+      propertyPath: m_PlayHapticsOnHoverEntered
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174356718691180763, guid: 06be254c53b7d654796de97c1caa5974,
+        type: 3}
+      propertyPath: m_HapticSelectEnterIntensity
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174356718691180763, guid: 06be254c53b7d654796de97c1caa5974,
+        type: 3}
+      propertyPath: m_PlayHapticsOnSelectEntered
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6316112690878550725, guid: 06be254c53b7d654796de97c1caa5974,
         type: 3}
       propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316112690878550727, guid: 06be254c53b7d654796de97c1caa5974,
+        type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456270816547035228, guid: 06be254c53b7d654796de97c1caa5974,
+        type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8456270816547035230, guid: 06be254c53b7d654796de97c1caa5974,
