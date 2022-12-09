@@ -1139,7 +1139,7 @@ PrefabInstance:
     - target: {fileID: 2768181261582922325, guid: df8cc702e0113b74f885b982513235c5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2768181261582922325, guid: df8cc702e0113b74f885b982513235c5,
         type: 3}
@@ -1720,7 +1720,7 @@ PrefabInstance:
     - target: {fileID: 6174356718691180763, guid: 06be254c53b7d654796de97c1caa5974,
         type: 3}
       propertyPath: m_RaycastMask.m_Bits
-      value: 33564671
+      value: 33564159
       objectReference: {fileID: 0}
     - target: {fileID: 6316112690878550725, guid: 06be254c53b7d654796de97c1caa5974,
         type: 3}
