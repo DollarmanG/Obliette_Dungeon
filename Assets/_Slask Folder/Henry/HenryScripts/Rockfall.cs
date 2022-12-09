@@ -34,6 +34,10 @@ namespace rockfall
         [SerializeField]
         ParticleSystem dustParticleStateTwo;
 
+        // Reference to FallingRocks class
+        [SerializeField]
+        private FallingRocks fallingRocks;
+
         // Used to double hover haptic values only between the first and second time user selects rockfall.
 
         // Index of three possible states:
@@ -126,6 +130,8 @@ namespace rockfall
 
                 dustParticleStateOne.Play();
 
+                fallingRocks.startSmallRockFall();
+
                 // Change to state one material.
                 meshRenderer.material = rockfallMaterials.setStateMaterial(1);
 
@@ -150,6 +156,8 @@ namespace rockfall
 
                 debrisParticlesStateOne.Stop();
                 dustParticleStateTwo.Play();
+
+                fallingRocks.startLargeRockFall();
 
                 // Change to state one material.
                 meshRenderer.material = rockfallMaterials.setStateMaterial(2);

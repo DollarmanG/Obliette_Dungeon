@@ -16428,7 +16428,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974558811}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 89a76a93aed9f6a43880d8a0c10851b4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -21968,7 +21968,7 @@ GameObject:
   - component: {fileID: 1496260646}
   - component: {fileID: 1496260647}
   m_Layer: 0
-  m_Name: SmallRockfall
+  m_Name: FallingRocks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22004,7 +22004,22 @@ MonoBehaviour:
   rock: {fileID: 2415504287417665783, guid: d193ef508cecf2a4f846873d825ca5bf, type: 3}
   rockfallTransform: {fileID: 975328686}
   rockfallBodyTransform: {fileID: 1863552997}
-  delay: 5
+  smallRocksMinXScale: 0.3
+  smallRocksMaxXScale: 0.5
+  smallRocksMinYScale: 0.25
+  smallRocksMaxYScale: 0.35
+  smallRocksMinZScale: 0.3
+  smallRocksMaxZScale: 0.5
+  largeRocksMinXScale: 0.8
+  largeRocksMaxXScale: 1
+  largeRocksMinYScale: 0.5
+  largeRocksMaxYScale: 0.6
+  largeRocksMinZScale: 0.8
+  largeRocksMaxZScale: 1
+  maxNumberOfSmallRocks: 25
+  maxNumberOfLargeRocks: 25
+  timeBetweenInstantiatingSmallRocks: 0.2
+  timeBetweenInstantiatingLargeRocks: 0.5
 --- !u!1 &1674453482
 GameObject:
   m_ObjectHideFlags: 0
@@ -22658,6 +22673,7 @@ MonoBehaviour:
   debrisParticlesStateOne: {fileID: 108919954}
   dustParticleStateOne: {fileID: 55610414}
   dustParticleStateTwo: {fileID: 470663839}
+  fallingRocks: {fileID: 1496260647}
   rockfallMaterials: {fileID: 1863553004}
 --- !u!114 &1863553004
 MonoBehaviour:
