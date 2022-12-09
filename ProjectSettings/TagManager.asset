@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -12,6 +13,14 @@ TagManager:
   - Water
   - UI
   - Spelare
+  - hands
+  - doorinteraktor
+  - Door
+  - Handle
+  - Raycasthands
+  - Guard
+  - Smallthingstograb
+  - Heaysmallobj
   - 
   - 
   - 
@@ -22,20 +31,12 @@ TagManager:
   - 
   - 
   - 
+  - Player
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Fireball
   - 
   m_SortingLayers:
   - name: Default
