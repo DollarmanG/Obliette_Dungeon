@@ -5,16 +5,11 @@ using UnityEngine;
 public class Hitbyaxe : MonoBehaviour
 {
 
-    
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-       
-        
-            Debug.Log("Du blev yxad");
-      
-
-        
+        Debug.Log("Du blev yxad");
     }
 
 
