@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -11,6 +12,13 @@ TagManager:
   - Knappi
   - Water
   - UI
+  - Spelare
+  - hands
+  - doorinteraktor
+  - Door
+  - Handle
+  - Raycasthands
+  - Guard
   - 
   - 
   - 
@@ -23,14 +31,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
   - 
   - 
   - 
