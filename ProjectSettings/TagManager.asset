@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Fireball
+  - FinalDoor
   layers:
   - Default
   - TransparentFX
@@ -35,7 +37,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - FinalDoor
   - Fireball
   - 
   m_SortingLayers:
