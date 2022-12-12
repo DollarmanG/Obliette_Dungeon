@@ -8,6 +8,7 @@ public class SceanLoader : MonoBehaviour
     // This index is youset to change whitch scean to load frelly
     [SerializeField] int indexerNummber;
 
+    [SerializeField] int indexerNummberForDeathScean;
 
     // This funstion schanges a scean to a spesific scean 
     public void NewSceanLoader()
@@ -18,5 +19,10 @@ public class SceanLoader : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void LoadDeathScean()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + indexerNummberForDeathScean);
     }
 }
