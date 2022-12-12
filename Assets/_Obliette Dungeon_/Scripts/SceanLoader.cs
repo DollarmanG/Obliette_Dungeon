@@ -14,6 +14,7 @@ public class SceanLoader : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + indexerNummber);
     }
+    // This funstion Exits the aplicastion if playd
     public void Quit()
     {
         Application.Quit();
