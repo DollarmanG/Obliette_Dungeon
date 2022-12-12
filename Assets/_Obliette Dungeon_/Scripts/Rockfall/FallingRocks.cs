@@ -114,7 +114,7 @@ public class FallingRocks : MonoBehaviour
             smallRandomZScale = Random.Range(smallRocksMinZScale, smallRocksMaxZScale);
 
 
-            GameObject rockClone = Instantiate(rock, rockfallPosition + new Vector3(randomXPosition, -0.5f, randomZPosition), Quaternion.Euler(0.0f, 0.0f, 90.0f), rockfallTransform);
+            GameObject rockClone = Instantiate(rock, rockfallPosition + new Vector3(randomXPosition, -0.5f, randomZPosition), Quaternion.identity, rockfallTransform);
             rockClone.transform.localScale = new Vector3(smallRandomXScale, smallRandomYScale, smallRandomZScale);
 
             yield return new WaitForSeconds(waitTime);
@@ -144,7 +144,7 @@ public class FallingRocks : MonoBehaviour
             largeRandomZScale = Random.Range(largeRocksMinZScale, largeRocksMaxZScale);
 
 
-            GameObject rockClone = Instantiate(rock, rockfallPosition + new Vector3(randomXPosition, -0.5f, randomZPosition), Quaternion.Euler(0.0f, 0.0f, 90.0f), rockfallTransform);
+            GameObject rockClone = Instantiate(rock, rockfallPosition + new Vector3(randomXPosition, -0.5f, randomZPosition), Quaternion.identity, rockfallTransform);
             rockClone.transform.localScale = new Vector3(largeRandomXScale, largeRandomYScale, largeRandomZScale);
 
             yield return new WaitForSeconds(waitTime);
