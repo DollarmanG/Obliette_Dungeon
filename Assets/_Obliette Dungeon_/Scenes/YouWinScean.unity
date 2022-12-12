@@ -634,7 +634,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Skapad av:\nAlexi Strandberg\nHenry Mikkonen\nNoman Syed\nOskar M\xF6llberg\n"
+  m_text: "Created by:\nAlexi Strandberg\nHenry Mikkonen\nNoman Syed\nOskar M\xF6llberg\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: be945f32b84f3e749ac5e7dddf159fbc, type: 2}
   m_sharedMaterial: {fileID: 6202635814426070606, guid: be945f32b84f3e749ac5e7dddf159fbc,
