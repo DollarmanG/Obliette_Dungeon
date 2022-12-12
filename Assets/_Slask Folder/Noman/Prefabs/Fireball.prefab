@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 2536392934210283008}
   - component: {fileID: 2536392934210283009}
   - component: {fileID: 2536392934210283010}
+  - component: {fileID: 1753268050}
   m_Layer: 30
   m_Name: Fireball
-  m_TagString: Untagged
+  m_TagString: Fireball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +53,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2536392934210283011}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -134,8 +135,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 2
-  m_DistanceCalculationMode: 1
+    m_Bits: 268435456
+  m_DistanceCalculationMode: 0
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
@@ -432,7 +433,7 @@ MonoBehaviour:
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
-  m_AttachEaseInTime: 64.38
+  m_AttachEaseInTime: 100
   m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 2
@@ -471,6 +472,21 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &1753268050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2536392934210283011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d1f8db8e00694343a11e4b339b11551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireOnDoor: {fileID: 0}
+  respawnPoint: {fileID: 0}
+  rb: {fileID: 2536392934210283009}
 --- !u!1001 &2536392932622439286
 PrefabInstance:
   m_ObjectHideFlags: 0
