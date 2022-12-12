@@ -509,7 +509,7 @@ PrefabInstance:
     - target: {fileID: 7108878536882521365, guid: 87769ba9c39d2964ba0d0edee5203877,
         type: 3}
       propertyPath: m_Name
-      value: "Nyckelh\xE5let2 (1)"
+      value: Keyhole
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87769ba9c39d2964ba0d0edee5203877, type: 3}
@@ -803,7 +803,7 @@ PrefabInstance:
     - target: {fileID: 3122423118859303533, guid: eb5a3ddfcc77d654cb6289e2f5e1e37d,
         type: 3}
       propertyPath: m_Name
-      value: Door (1)
+      value: PrisonDoor
       objectReference: {fileID: 0}
     - target: {fileID: 3122423118859303534, guid: eb5a3ddfcc77d654cb6289e2f5e1e37d,
         type: 3}
@@ -1413,7 +1413,7 @@ PrefabInstance:
     - target: {fileID: 2056141694734523645, guid: e0895ba452e8c7341b8b655d2e94b818,
         type: 3}
       propertyPath: m_Name
-      value: Character_Male_Police_01
+      value: Guard AI
       objectReference: {fileID: 0}
     - target: {fileID: 2056141694734523645, guid: e0895ba452e8c7341b8b655d2e94b818,
         type: 3}
@@ -1602,7 +1602,7 @@ PrefabInstance:
     - target: {fileID: 2768181261582922324, guid: df8cc702e0113b74f885b982513235c5,
         type: 3}
       propertyPath: m_Name
-      value: Yxa pivot (2)
+      value: Swinging Axe 3
       objectReference: {fileID: 0}
     - target: {fileID: 2768181261582922325, guid: df8cc702e0113b74f885b982513235c5,
         type: 3}
@@ -1775,7 +1775,7 @@ PrefabInstance:
     - target: {fileID: 4266174926389803448, guid: 564994b328d85fc468d8796ba2b5b8e7,
         type: 3}
       propertyPath: m_Name
-      value: Yxa pivot
+      value: Swinging Axe 1
       objectReference: {fileID: 0}
     - target: {fileID: 4266174926389803451, guid: 564994b328d85fc468d8796ba2b5b8e7,
         type: 3}
@@ -1948,7 +1948,7 @@ PrefabInstance:
     - target: {fileID: 4550762851657550166, guid: 7dacb6937d12cdc41a34aa819e79085b,
         type: 3}
       propertyPath: m_Name
-      value: Yxa pivot (1)
+      value: Swinging Axe 2
       objectReference: {fileID: 0}
     - target: {fileID: 4550762851657550167, guid: 7dacb6937d12cdc41a34aa819e79085b,
         type: 3}
@@ -2705,7 +2705,7 @@ PrefabInstance:
     - target: {fileID: 8537200755883384519, guid: 008b2f961cd6312498180768e1109c58,
         type: 3}
       propertyPath: m_Name
-      value: Stuff in cell
+      value: Cell Enviroment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 008b2f961cd6312498180768e1109c58, type: 3}
