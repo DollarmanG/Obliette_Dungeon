@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class FireBallInteract : MonoBehaviour
 {
-    [SerializeField] private GameObject FireOnDoor;
+    [SerializeField] private GameObject fireOnDoor;
+    [SerializeField] private Transform respawnPoint;
+    [SerializeField] private Rigidbody rb;
 
 
     void OnTriggerEnter(Collider other)
@@ -13,7 +15,7 @@ public class FireBallInteract : MonoBehaviour
         if (other.gameObject.CompareTag("FinalDoor"))
         {
             gameObject.SetActive(false);
-            FireOnDoor.SetActive(true);
+            fireOnDoor.SetActive(true);
             Invoke("FireDoor", 5f);
         }
     }
@@ -22,13 +24,16 @@ public class FireBallInteract : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Player"))
         {
-            gameObject.SetActive(false);
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+            gameObject.transform.position = respawnPoint.position;
+            rb.constraints = RigidbodyConstraints.None;
+
         }
     }
 
     void FireDoor()
     {
-        FireOnDoor.SetActive(false);
+        fireOnDoor.SetActive(false);
 
     }
 }
