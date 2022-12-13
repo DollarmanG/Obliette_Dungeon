@@ -10,6 +10,7 @@ public class SceanLoader : MonoBehaviour
 
     [SerializeField] int indexerNummberForDeathScean;
 
+    [SerializeField] float loadTime;
     // This funstion schanges a scean to a spesific scean 
     public void NewSceanLoader()
     {
@@ -20,9 +21,22 @@ public class SceanLoader : MonoBehaviour
     {
         Application.Quit();
     }
-
+    // This funstion makes it so that if another scean needs to be loaded then it can be loaded.
     public void LoadDeathScean()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + indexerNummberForDeathScean);
+    }
+
+    public void InvokeNewSceanLoader()
+    {
+        Invoke("NewSceanLoader", loadTime);
+    }
+    public void InvokeQuit()
+    {
+        Invoke("Quit", loadTime);
+    }
+    public void InvokeLoadDeathScean()
+    {
+        Invoke("LoadDeathScean", loadTime);
     }
 }
