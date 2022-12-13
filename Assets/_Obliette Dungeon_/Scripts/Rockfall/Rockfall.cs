@@ -45,6 +45,9 @@ namespace rockfall
 
         [SerializeField]
         private RockfallHoverDebris rockfallHoverDebris;
+
+        [SerializeField]
+        private RockImpactAudio rockImpactAudio;
         
 
         // Used to double hover haptic values only between the first and second time user selects rockfall.
@@ -76,7 +79,8 @@ namespace rockfall
             // Set rockfallMeshrenderer variable equal to this game object's mesh renderer
             meshRenderer = GetComponent<MeshRenderer>();
 
-            
+            rockImpactAudio.playerHasSelectedOnce = false;
+
 
             // Set this game object's first material equal to the first material in
             // rockfallMaterials array attached to this game object.
@@ -145,6 +149,8 @@ namespace rockfall
 
             if (stateCount == 0)
             {
+                rockImpactAudio.playerHasSelectedOnce = true;
+
 
                 // Stop the first hovering particle and audio effects and switch over to the next ones
                 debrisParticlesStateZero.Stop();

@@ -173,7 +173,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.896
+      value: 0.917
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -233,3 +233,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 386253acaa7aa314cbd9129ed8ea6422, type: 3}
   - {fileID: 8300000, guid: 9a2d59fea8290ef4fb9296c1b057e81d, type: 3}
   - {fileID: 8300000, guid: 0325e0b2998ff964f800e4a66e9bfeda, type: 3}
+  playerHasSelectedOnce: 1
