@@ -1368,7 +1368,7 @@ PrefabInstance:
     - target: {fileID: 3122423120560103402, guid: eb5a3ddfcc77d654cb6289e2f5e1e37d,
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3122423120560103402, guid: eb5a3ddfcc77d654cb6289e2f5e1e37d,
         type: 3}
@@ -1384,7 +1384,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1487378850}
+      objectReference: {fileID: 1039130278}
     - target: {fileID: 3122423120560103402, guid: eb5a3ddfcc77d654cb6289e2f5e1e37d,
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
@@ -1398,7 +1398,7 @@ PrefabInstance:
     - target: {fileID: 3122423120560103402, guid: eb5a3ddfcc77d654cb6289e2f5e1e37d,
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: TeleportBack
+      value: stopstound
       objectReference: {fileID: 0}
     - target: {fileID: 3122423120560103402, guid: eb5a3ddfcc77d654cb6289e2f5e1e37d,
         type: 3}
@@ -1408,7 +1408,7 @@ PrefabInstance:
     - target: {fileID: 3122423120560103402, guid: eb5a3ddfcc77d654cb6289e2f5e1e37d,
         type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: GrabInteractebleOskar, Assembly-CSharp
+      value: Doorismoving, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3122423120560103402, guid: eb5a3ddfcc77d654cb6289e2f5e1e37d,
         type: 3}
@@ -1440,6 +1440,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ff49d9038e189cc4ca74fd6245b4cfa6, type: 3}
   - {fileID: 8300000, guid: b182d4bab473e8140a38611d9d4085b8, type: 3}
   - {fileID: 8300000, guid: 7c4b5c5ab48c1aa4c9e8e91b10b1bacf, type: 3}
+  source: {fileID: 1039130279}
 --- !u!82 &1039130279
 AudioSource:
   m_ObjectHideFlags: 0

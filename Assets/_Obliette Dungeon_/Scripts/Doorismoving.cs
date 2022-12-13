@@ -8,10 +8,11 @@ public class Doorismoving : MonoBehaviour
     private Transform door;
     [SerializeField]
     private AudioClip[] soundsdoor;
+    [SerializeField]
     private AudioSource source;
     void Start()
     {
-        source = GetComponent<AudioSource>();
+        
     }
         
     // Nollställer nuvarande och pågående värde till 0.
@@ -19,20 +20,23 @@ public class Doorismoving : MonoBehaviour
     private int currentvalue = 0;
     void Update()
     {
-        // Gör om current value till vad dörren har för rotation på Y axlen till INT.
+
         
+        // Gör om current value till vad dörren har för rotation på Y axlen till INT.
+
         currentvalue = Mathf.FloorToInt(door.transform.rotation.eulerAngles.y);
 
         // Om dörren rör sig så händer nedan.
         if (currentvalue != prevalue)
         {
+            source.mute = false;
             source.clip = soundsdoor[Random.Range(0, soundsdoor.Length)];
             source.PlayOneShot(source.clip);
             prevalue = currentvalue;
+            
         }
 
-        else if (currentvalue == prevalue)
-        { Debug.Log("jag passerade"); }
+       
 
 
     }
@@ -41,7 +45,6 @@ public class Doorismoving : MonoBehaviour
 
     {
 
-        source.Stop();
-
+        source.mute = true;
     }
 }
