@@ -204,12 +204,12 @@ PrefabInstance:
     - target: {fileID: 5058642481034983322, guid: 37ac51fb8f137c34fbc13251fd08e168,
         type: 3}
       propertyPath: maxNumberOfLargeRocks
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5058642481034983322, guid: 37ac51fb8f137c34fbc13251fd08e168,
         type: 3}
       propertyPath: maxNumberOfSmallRocks
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5058642481034983323, guid: 37ac51fb8f137c34fbc13251fd08e168,
         type: 3}
@@ -243,14 +243,124 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 41fb4d3c3eda25e46b2ca6f05387a072, type: 2}
     - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
         type: 3}
+      propertyPath: rockfallHoverDebris
+      value: 
+      objectReference: {fileID: 850733286}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: RockfallAudioManager
+      value: 
+      objectReference: {fileID: 65313268}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: RockfallCrackingStone
+      value: 
+      objectReference: {fileID: 778738597}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
       propertyPath: leftHandRayInteractor
       value: 
       objectReference: {fileID: 1610673326}
     - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
         type: 3}
+      propertyPath: rockfallCrackingStone
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
       propertyPath: rightHandRayInteractor
       value: 
       objectReference: {fileID: 1545549172}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: rockfallHoverCrackingStone
+      value: 
+      objectReference: {fileID: 778738596}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 778738597}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 850733287}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 778738594}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Stop
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: Stop
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_FirstHoverEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058642481205663830, guid: 37ac51fb8f137c34fbc13251fd08e168,
+        type: 3}
+      propertyPath: m_LastHoverExited.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5058642481205663832, guid: 37ac51fb8f137c34fbc13251fd08e168,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -304,6 +414,39 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 59557079}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &65313268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 65313269}
+  m_Layer: 0
+  m_Name: Rockfall Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &65313269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65313268}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 778738595}
+  - {fileID: 850733285}
+  m_Father: {fileID: 59557080}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &71046208 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1174836858767625261, guid: 87769ba9c39d2964ba0d0edee5203877,
@@ -1028,6 +1171,292 @@ Transform:
   m_Father: {fileID: 357880150}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &778738594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 778738595}
+  - component: {fileID: 778738597}
+  - component: {fileID: 778738596}
+  m_Layer: 0
+  m_Name: RockfallHoverCrackingStone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &778738595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778738594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 65313269}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &778738596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778738594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b54fb9f05d4d854599317ebf13cd0fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateOneClip: {fileID: 8300000, guid: d84301d5d297a8343a1ee505d66f88c3, type: 3}
+  stateTwoClip: {fileID: 8300000, guid: e6ffd382d32dc9b4c93837dc064b3bc6, type: 3}
+--- !u!82 &778738597
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778738594}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 20
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.897
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &850733284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 850733285}
+  - component: {fileID: 850733287}
+  - component: {fileID: 850733286}
+  m_Layer: 0
+  m_Name: RockfallHoverDebris
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &850733285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850733284}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 65313269}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &850733286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850733284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da4c5157c6624240a360b06a6c14240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateOneClip: {fileID: 8300000, guid: 1376890124ecdca4082b40b7bcfceb1d, type: 3}
+  stateTwoClip: {fileID: 8300000, guid: 2e4669b08b092c948a39719f61bfcd24, type: 3}
+--- !u!82 &850733287
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850733284}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 20
+  Pan2D: 0
+  rolloffMode: 1
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.897
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &855478071 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2056141694734241045, guid: e0895ba452e8c7341b8b655d2e94b818,
@@ -3290,7 +3719,7 @@ PrefabInstance:
     - target: {fileID: 6174356716780273428, guid: 06be254c53b7d654796de97c1caa5974,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.34
+      value: 38.3
       objectReference: {fileID: 0}
     - target: {fileID: 6174356716780273428, guid: 06be254c53b7d654796de97c1caa5974,
         type: 3}
@@ -3300,7 +3729,7 @@ PrefabInstance:
     - target: {fileID: 6174356716780273428, guid: 06be254c53b7d654796de97c1caa5974,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.39
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6174356716780273428, guid: 06be254c53b7d654796de97c1caa5974,
         type: 3}
