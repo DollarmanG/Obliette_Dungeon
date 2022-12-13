@@ -146,7 +146,7 @@ namespace rockfall
             if (stateCount == 0)
             {
 
-                // Stop the first hovering particle and audio effect and switch over to the next one
+                // Stop the first hovering particle and audio effects and switch over to the next ones
                 debrisParticlesStateZero.Stop();
                 debrisParticlesStateOne.Play();
                 rockfallHoverCrackingStone.stop();
@@ -154,9 +154,10 @@ namespace rockfall
                 rockfallHoverDebris.stop();
                 rockfallHoverDebris.playStateTwoClip();
                 
-
+                // Play first dust particle effect.
                 dustParticleStateOne.Play();
 
+                // Start small rock fall.
                 fallingRocks.startSmallRockFall();
 
                 // Change to state one material.
@@ -179,9 +180,12 @@ namespace rockfall
             }
             else if (stateCount == 1)
             {
-                Debug.Log("You have selected the item for the second time. Switching to third state and removing all selection haptics.");
-
+                // Stop the second hovering particle and audio effects
                 debrisParticlesStateOne.Stop();
+                rockfallHoverCrackingStone.stop();
+                rockfallHoverDebris.stop();
+
+                // Play second dust particle effect
                 dustParticleStateTwo.Play();
 
                 fallingRocks.startLargeRockFall();
