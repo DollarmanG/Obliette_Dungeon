@@ -7,6 +7,8 @@ public class FireBallInteract : MonoBehaviour
 {
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private AudioSource audioOnImpact;
+    [SerializeField] private AudioClip fireballImpactClip;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -18,6 +20,8 @@ public class FireBallInteract : MonoBehaviour
 
             gameObject.transform.position = respawnPoint.position;
             gameObject.transform.rotation = respawnPoint.rotation;
+
+            audioOnImpact.PlayOneShot(fireballImpactClip);
         }
     }
 }
