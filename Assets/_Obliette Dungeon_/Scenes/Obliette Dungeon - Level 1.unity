@@ -2768,9 +2768,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1889311596}
     - target: {fileID: 1063693714, guid: e6eebbd330f8645448dcecd6e69d3441, type: 3}
+      propertyPath: audioOnImpact
+      value: 
+      objectReference: {fileID: 2018034740}
+    - target: {fileID: 1063693714, guid: e6eebbd330f8645448dcecd6e69d3441, type: 3}
       propertyPath: doorBurningSound
       value: 
       objectReference: {fileID: 882368702}
+    - target: {fileID: 1063693714, guid: e6eebbd330f8645448dcecd6e69d3441, type: 3}
+      propertyPath: fireballImpactClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cbfad9b2dd734e541a17784ddbe85465, type: 3}
     - target: {fileID: 4067877825068776377, guid: e6eebbd330f8645448dcecd6e69d3441,
         type: 3}
       propertyPath: m_Name
