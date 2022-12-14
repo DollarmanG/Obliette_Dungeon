@@ -339,18 +339,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 124.797295, y: 32.9718}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &304813305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 304813307}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 401f3e72db3e66b41b9e0aa3cdb67abc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &304813307
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,7 +350,6 @@ GameObject:
   - component: {fileID: 304813304}
   - component: {fileID: 304813063}
   - component: {fileID: 304813062}
-  - component: {fileID: 304813305}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -571,7 +558,6 @@ GameObject:
   - component: {fileID: 662525998}
   - component: {fileID: 662525997}
   - component: {fileID: 662525996}
-  - component: {fileID: 662525999}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -700,18 +686,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 124.797295, y: 32.9718}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &662525999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 662525985}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 401f3e72db3e66b41b9e0aa3cdb67abc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!225 &769170842
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1516,18 +1490,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122332380}
   m_CullTransparentMesh: 1
---- !u!114 &1122332378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122332380}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 401f3e72db3e66b41b9e0aa3cdb67abc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1122332379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1630,7 +1592,6 @@ GameObject:
   - component: {fileID: 1122332381}
   - component: {fileID: 1122332376}
   - component: {fileID: 1122332379}
-  - component: {fileID: 1122332378}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2349,8 +2310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab3e7609e6cb134bb89c25b706437ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indexerNummber: 1
-  indexerNummberForDeathScean: 0
+  indexNumberToChangeScene: 1
+  indexNumberForDeathScene: 0
   loadTime: 3
 --- !u!4 &2009986792523981225
 Transform:
@@ -2378,7 +2339,7 @@ GameObject:
   - component: {fileID: 2009986792523981225}
   - component: {fileID: 2009986792523981224}
   m_Layer: 0
-  m_Name: SceanManeger
+  m_Name: SceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2801,8 +2762,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2009986792523981224}
-        m_TargetAssemblyTypeName: SceanLoader, Assembly-CSharp
-        m_MethodName: InvokeNewSceanLoader
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: InvokeNewSceneLoader
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

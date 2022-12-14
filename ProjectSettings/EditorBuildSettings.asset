@@ -9,16 +9,16 @@ EditorBuildSettings:
     path: Assets/_Obliette Dungeon_/Scenes/MainMenu.unity
     guid: 7095414ce86b940408ffc1e6ee705b4e
   - enabled: 1
-    path: Assets/_Obliette Dungeon_/Scenes/OpeningScean.unity
+    path: Assets/_Obliette Dungeon_/Scenes/OpeningScene.unity
     guid: f2e245d0913a101448600e997e2fd6c5
   - enabled: 1
     path: Assets/_Obliette Dungeon_/Scenes/Obliette Dungeon - Level 1.unity
     guid: d7b5342f9e3f6eb479541df6e93efd4a
   - enabled: 1
-    path: Assets/_Obliette Dungeon_/Scenes/YouWinScean.unity
+    path: Assets/_Obliette Dungeon_/Scenes/YouWinScene.unity
     guid: 600d4d6f1fbbdf240956738c6633ef58
   - enabled: 1
-    path: Assets/_Obliette Dungeon_/Scenes/GameOverScean.unity
+    path: Assets/_Obliette Dungeon_/Scenes/GameOverScene.unity
     guid: ae46004bdac1e714098b72fb6a82f30c
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 036a704b052306446bcc973961176028,

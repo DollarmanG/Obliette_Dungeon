@@ -542,7 +542,7 @@ GameObject:
   - component: {fileID: 727876335}
   - component: {fileID: 727876334}
   m_Layer: 0
-  m_Name: SceanManeger
+  m_Name: SceneManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -560,8 +560,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab3e7609e6cb134bb89c25b706437ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indexerNummber: 1
-  indexerNummberForDeathScean: 0
+  indexNumberToChangeScene: 1
+  indexNumberForDeathScene: 0
   loadTime: 3
 --- !u!4 &727876335
 Transform:
@@ -814,8 +814,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 727876334}
-        m_TargetAssemblyTypeName: SceanLoader, Assembly-CSharp
-        m_MethodName: InvokeNewSceanLoader
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: InvokeNewSceneLoader
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

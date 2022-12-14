@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceanLoader : MonoBehaviour
+public class SceneLoader : MonoBehaviour
 {
     // This index is youset to change whitch scean to load frelly
-    [SerializeField] int indexerNummber;
+    [SerializeField] int indexNumberToChangeScene;
 
-    [SerializeField] int indexerNummberForDeathScean;
+    [SerializeField] int indexNumberForDeathScene;
 
     [SerializeField] float loadTime;
     // This funstion schanges a scean to a spesific scean 
-    public void NewSceanLoader()
+    public void NewSceneLoader()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + indexerNummber);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + indexNumberToChangeScene);
     }
     // This funstion Exits the aplicastion if playd
     public void Quit()
@@ -22,21 +22,21 @@ public class SceanLoader : MonoBehaviour
         Application.Quit();
     }
     // This funstion makes it so that if another scean needs to be loaded then it can be loaded.
-    public void LoadDeathScean()
+    public void LoadDeathScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + indexerNummberForDeathScean);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + indexNumberForDeathScene);
     }
 
-    public void InvokeNewSceanLoader()
+    public void InvokeNewSceneLoader()
     {
-        Invoke("NewSceanLoader", loadTime);
+        Invoke("NewSceneLoader", loadTime);
     }
     public void InvokeQuit()
     {
         Invoke("Quit", loadTime);
     }
-    public void InvokeLoadDeathScean()
+    public void InvokeLoadDeathScene()
     {
-        Invoke("LoadDeathScean", loadTime);
+        Invoke("LoadDeathScene", loadTime);
     }
 }
