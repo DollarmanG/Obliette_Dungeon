@@ -2638,11 +2638,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireGoblet
       objectReference: {fileID: 0}
-    - target: {fileID: 3378327516701915092, guid: 90d5d16172c336744a7965aedb922a16,
-        type: 3}
-      propertyPath: m_Name
-      value: GobletFire
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90d5d16172c336744a7965aedb922a16, type: 3}
 --- !u!4 &1350501319 stripped
