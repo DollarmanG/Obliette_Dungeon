@@ -254,7 +254,7 @@ PrefabInstance:
     - target: {fileID: 2106207681493384297, guid: f31caf7228522fc40bd0fafdeb538896,
         type: 3}
       propertyPath: m_Name
-      value: Fire_01_FX
+      value: GobletFire
       objectReference: {fileID: 0}
     - target: {fileID: 2106207681493384297, guid: f31caf7228522fc40bd0fafdeb538896,
         type: 3}
