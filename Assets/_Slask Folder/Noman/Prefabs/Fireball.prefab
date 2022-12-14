@@ -444,7 +444,7 @@ PrefabInstance:
     - target: {fileID: 19480268680673904, guid: 9ee56ccaa2468a845b972c4200e8e0e1,
         type: 3}
       propertyPath: m_Name
-      value: Fire_01_FX (1)
+      value: Fire_01_FX
       objectReference: {fileID: 0}
     - target: {fileID: 19480268680673904, guid: 9ee56ccaa2468a845b972c4200e8e0e1,
         type: 3}
