@@ -2351,7 +2351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   indexerNummber: 1
   indexerNummberForDeathScean: 0
-  loadTime: 0
+  loadTime: 3
 --- !u!4 &2009986792523981225
 Transform:
   m_ObjectHideFlags: 0
