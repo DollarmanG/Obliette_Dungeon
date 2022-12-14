@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 1063693713}
   - component: {fileID: 1063693714}
   m_Layer: 29
-  m_Name: SM_Bld_Castle_Door_01
+  m_Name: FinalDoor
   m_TagString: FinalDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1

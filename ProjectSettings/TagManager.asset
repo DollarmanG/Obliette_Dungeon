@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Fireball
+  - FinalDoor
   layers:
   - Default
   - TransparentFX
@@ -35,9 +37,9 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - FinalDoor
   - Fireball
-  - 
+  - Teleportation
   m_SortingLayers:
   - name: Default
     uniqueID: 0
