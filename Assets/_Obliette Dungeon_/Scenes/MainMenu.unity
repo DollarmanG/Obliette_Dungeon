@@ -1129,7 +1129,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791737579}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -1286,7 +1286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 1791737581}
-  timeToFade: 1
+  timeToFadeOut: 0
+  timeToFadeIn: 0
 --- !u!1 &1991873774
 GameObject:
   m_ObjectHideFlags: 0
