@@ -6,6 +6,10 @@ public class FinalDoorDissapear : MonoBehaviour
 {
     [SerializeField] private LayerMask colliderMask;
     [SerializeField] private GameObject fireOnDoor;
+    [SerializeField] private AudioSource doorBurningSound;
+    [SerializeField] private AudioSource audioOnImpact;
+    [SerializeField] private AudioClip fireballImpactClip;
+
     void OnTriggerEnter(Collider other)
     {
         int testMask = 1 << other.gameObject.layer;
@@ -17,6 +21,9 @@ public class FinalDoorDissapear : MonoBehaviour
             fireOnDoor.SetActive(true);
             Invoke("FireDoor", 5f);
             Invoke("DoorDissapear", 5f);
+            audioOnImpact.PlayOneShot(fireballImpactClip);
+            doorBurningSound.PlayOneShot(doorBurningSound.clip);
+            doorBurningSound = null;
         }
     }
 
