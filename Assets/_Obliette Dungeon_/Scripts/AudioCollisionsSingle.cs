@@ -31,7 +31,6 @@ namespace audioCollisions
                 randomPitch = Random.Range(-0.5f, 0.5f);
                 audioSource.pitch = audioSource.pitch + randomPitch;
                 audioSource.PlayOneShot(audioSource.clip);
-                Debug.Log("Audio source pitch = " + audioSource.pitch);
             }
 
             
