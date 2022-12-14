@@ -46,8 +46,12 @@ namespace rockfall
         [SerializeField]
         private RockfallHoverDebris rockfallHoverDebris;
 
+        //References to rockfall oneshot audio effects
+
         [SerializeField]
-        private RockImpactAudio rockImpactAudio;
+        private AudioSource rockfallOne;
+        [SerializeField]
+        private AudioSource rockfallTwo;
         
 
         // Used to double hover haptic values only between the first and second time user selects rockfall.
@@ -78,8 +82,6 @@ namespace rockfall
         {
             // Set rockfallMeshrenderer variable equal to this game object's mesh renderer
             meshRenderer = GetComponent<MeshRenderer>();
-
-            rockImpactAudio.playerHasSelectedOnce = false;
 
 
             // Set this game object's first material equal to the first material in
@@ -149,7 +151,6 @@ namespace rockfall
 
             if (stateCount == 0)
             {
-                rockImpactAudio.playerHasSelectedOnce = true;
 
 
                 // Stop the first hovering particle and audio effects and switch over to the next ones
@@ -165,6 +166,9 @@ namespace rockfall
 
                 // Start small rock fall.
                 fallingRocks.startSmallRockFall();
+
+                // Play first rockfall oneshot
+                rockfallOne.PlayOneShot(rockfallOne.clip);
 
                 // Change to state one material.
                 meshRenderer.material = rockfallMaterials.setStateMaterial(1);
@@ -194,7 +198,11 @@ namespace rockfall
                 // Play second dust particle effect
                 dustParticleStateTwo.Play();
 
+                // Start large rockfall
                 fallingRocks.startLargeRockFall();
+
+                // Play second rockfall oneshot
+                rockfallTwo.PlayOneShot(rockfallTwo.clip);
 
                 // Change to state one material.
                 meshRenderer.material = rockfallMaterials.setStateMaterial(2);
