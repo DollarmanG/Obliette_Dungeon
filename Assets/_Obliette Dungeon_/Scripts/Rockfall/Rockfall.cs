@@ -38,6 +38,22 @@ namespace rockfall
         [SerializeField]
         private FallingRocks fallingRocks;
 
+        // References to Rockfall audio scripts
+
+        [SerializeField]
+        private RockfallHoverCrackingStone rockfallHoverCrackingStone;
+
+        [SerializeField]
+        private RockfallHoverDebris rockfallHoverDebris;
+
+        //References to rockfall oneshot audio effects
+
+        [SerializeField]
+        private AudioSource rockfallOne;
+        [SerializeField]
+        private AudioSource rockfallTwo;
+        
+
         // Used to double hover haptic values only between the first and second time user selects rockfall.
 
         // Index of three possible states:
@@ -67,6 +83,7 @@ namespace rockfall
             // Set rockfallMeshrenderer variable equal to this game object's mesh renderer
             meshRenderer = GetComponent<MeshRenderer>();
 
+
             // Set this game object's first material equal to the first material in
             // rockfallMaterials array attached to this game object.
             meshRenderer.material = rockfallMaterials.setStateMaterial(0);
@@ -92,24 +109,35 @@ namespace rockfall
             // The first time user hovers over rockfall, trigger dialogue and enable state zero particle effect.
             if (hoverCount == 0)
             {
-                Debug.Log("Hmmm... the foundation seems cracked here.");
 
                 // Set state zero particle effect to active.
                 debrisParticlesStateZero.Play();
+
+
+                // Play first hover sound effect.
+                rockfallHoverCrackingStone.playStateOneClip();
+                rockfallHoverDebris.playStateOneClip();
 
                 // Raise hover count by one.
                 hoverCount++;
             }
 
-            // Every time user hovers, after the first hover and before first select, enable state zero particle effect.
+            // Every time user hovers, after the first hover and before first select, enable state zero particle effect
+            // and first audio hover effects.
             if (hoverCount > 0 && stateCount == 0)
             {
                 debrisParticlesStateZero.Play();
+                rockfallHoverCrackingStone.playStateOneClip();
+                rockfallHoverDebris.playStateOneClip();
             }
+
+            // After first select, play next particle effect and next hovering sound effect.
 
             if (hoverCount > 0 && stateCount == 1)
             {
                 debrisParticlesStateOne.Play();
+                rockfallHoverCrackingStone.playStateTwoClip();
+                rockfallHoverDebris.playStateTwoClip();
             }
 
         }
@@ -119,18 +147,28 @@ namespace rockfall
             base.OnSelectEntered(args);
 
             // The first time user selects rockfall, raise the value of the selction haptics, go to the next state and
-            // allow the doubling of hover haptics.
+            // allow the doubling of hover haptics. Stop the previous hover particle effect and sound effect, and play the next effect.
 
             if (stateCount == 0)
             {
-                Debug.Log("You have selected the item for the first time. Switching to second state");
 
+
+                // Stop the first hovering particle and audio effects and switch over to the next ones
                 debrisParticlesStateZero.Stop();
                 debrisParticlesStateOne.Play();
-
+                rockfallHoverCrackingStone.stop();
+                rockfallHoverCrackingStone.playStateTwoClip();
+                rockfallHoverDebris.stop();
+                rockfallHoverDebris.playStateTwoClip();
+                
+                // Play first dust particle effect.
                 dustParticleStateOne.Play();
 
+                // Start small rock fall.
                 fallingRocks.startSmallRockFall();
+
+                // Play first rockfall oneshot
+                rockfallOne.PlayOneShot(rockfallOne.clip);
 
                 // Change to state one material.
                 meshRenderer.material = rockfallMaterials.setStateMaterial(1);
@@ -152,12 +190,19 @@ namespace rockfall
             }
             else if (stateCount == 1)
             {
-                Debug.Log("You have selected the item for the second time. Switching to third state and removing all selection haptics.");
-
+                // Stop the second hovering particle and audio effects
                 debrisParticlesStateOne.Stop();
+                rockfallHoverCrackingStone.stop();
+                rockfallHoverDebris.stop();
+
+                // Play second dust particle effect
                 dustParticleStateTwo.Play();
 
+                // Start large rockfall
                 fallingRocks.startLargeRockFall();
+
+                // Play second rockfall oneshot
+                rockfallTwo.PlayOneShot(rockfallTwo.clip);
 
                 // Change to state one material.
                 meshRenderer.material = rockfallMaterials.setStateMaterial(2);

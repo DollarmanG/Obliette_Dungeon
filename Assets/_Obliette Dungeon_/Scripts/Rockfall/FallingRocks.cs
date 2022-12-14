@@ -69,12 +69,6 @@ public class FallingRocks : MonoBehaviour
     {
         // Abbreviated reference to the position of the empty rockfall parent object.
         rockfallPosition = rockfallTransform.position;
-
-
-        //coroutine = instantiateSmallRockFall(timeBetweenInstantiatingSmallRocks);
-        //coroutine = instantiateLargeRockFall(timeBetweenInstantiatingLargeRocks);
-
-        //StartCoroutine(coroutine);
     }
 
     public void startSmallRockFall()
@@ -116,6 +110,8 @@ public class FallingRocks : MonoBehaviour
 
             GameObject rockClone = Instantiate(rock, rockfallPosition + new Vector3(randomXPosition, -0.5f, randomZPosition), Quaternion.identity, rockfallTransform);
             rockClone.transform.localScale = new Vector3(smallRandomXScale, smallRandomYScale, smallRandomZScale);
+
+            
 
             yield return new WaitForSeconds(waitTime);
         }
