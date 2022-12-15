@@ -11,6 +11,7 @@ public class GuardPatrolling : MonoBehaviour
     [SerializeField] private PatrolPath patrolPath;
     [SerializeField] private float waypointTolerance = 1f;
     [SerializeField] private float waypointDwellTime = 3f;
+    [SerializeField] private AudioSource _chaseplayerAudio;
 
     [Range(0, 1)][SerializeField] private float patrolSpeedFraction = 0.2f;
 
@@ -151,6 +152,7 @@ public class GuardPatrolling : MonoBehaviour
     private void ChaseTarget()
     {
         UpdateAnimator();
+        _chaseplayerAudio.PlayOneShot(_chaseplayerAudio.clip);
         
         if (target != null)
         {
