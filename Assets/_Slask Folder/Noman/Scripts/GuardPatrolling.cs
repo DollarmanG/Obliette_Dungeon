@@ -152,7 +152,6 @@ public class GuardPatrolling : MonoBehaviour
     private void ChaseTarget()
     {
         UpdateAnimator();
-        _chaseplayerAudio.PlayOneShot(_chaseplayerAudio.clip);
         
         if (target != null)
         {
