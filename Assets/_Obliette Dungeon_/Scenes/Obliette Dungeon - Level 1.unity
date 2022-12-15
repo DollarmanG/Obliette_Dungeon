@@ -2606,6 +2606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b51afe7ebc95224d91a7b8b2cb549c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetTransform: {fileID: 855478071}
   walkClips:
   - {fileID: 8300000, guid: c863de3d2a2435e488a24b272ed02cae, type: 3}
   - {fileID: 8300000, guid: 6f266780dc60c3b45abbd809f3ebf543, type: 3}
@@ -2617,9 +2618,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a4f6c3cb5a7ab5a49b13c0b988952a8c, type: 3}
   - {fileID: 8300000, guid: 351e293f8ab397149bee4037f69377c3, type: 3}
   myPlayOnAwake: 0
+  myLoop: 1
   spatialization: 1
   myMaxDistance: 20
-  rb: {fileID: 919844736}
+  footstepMultiplier: 1
 --- !u!82 &830367697
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2634,7 +2636,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2870,12 +2872,6 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 882368702, guid: 17d0aae3ca7458c4ab3774cd92203696,
     type: 3}
   m_PrefabInstance: {fileID: 1889311594}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &919844736 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 2056141693950829547, guid: e0895ba452e8c7341b8b655d2e94b818,
-    type: 3}
-  m_PrefabInstance: {fileID: 1492571898}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &960973296 stripped
 GameObject:
