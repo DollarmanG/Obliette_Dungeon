@@ -5811,6 +5811,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireOnDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 4701980409555421282, guid: 17d0aae3ca7458c4ab3774cd92203696,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17d0aae3ca7458c4ab3774cd92203696, type: 3}
 --- !u!4 &1889311595 stripped
