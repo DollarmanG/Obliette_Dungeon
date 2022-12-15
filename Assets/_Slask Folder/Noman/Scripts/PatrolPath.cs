@@ -5,7 +5,7 @@ namespace Gizmo.Patrol
     public class PatrolPath : MonoBehaviour
     {
         //Radius of the gizmo point
-        private const float waypointGizmoRadius = 0.3f;
+        private const float waypointGizmoRadius = 0.1f;
 
         //this method increases the waypoint for the path and draws new lines from the previus waypoint to a new point
         void OnDrawGizmos()
