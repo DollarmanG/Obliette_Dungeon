@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2009986792617611944, guid: f9a1bd5f268674148b6f2cbdeddca209,
         type: 3}
       propertyPath: m_Name
-      value: SceanManeger
+      value: SceneManager (Variant)
       objectReference: {fileID: 0}
     - target: {fileID: 2009986792617611946, guid: f9a1bd5f268674148b6f2cbdeddca209,
         type: 3}

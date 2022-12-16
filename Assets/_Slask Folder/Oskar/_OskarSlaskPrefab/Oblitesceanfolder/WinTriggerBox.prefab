@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1979237245010568284}
   - component: {fileID: 1979237245010568287}
   m_Layer: 0
-  m_Name: WinTrigerBox
+  m_Name: WinTriggerBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
