@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrabInteractebleOskar : MonoBehaviour
+public class GrabInterractableDoor : MonoBehaviour
 {
     [SerializeField] private Transform teleportTo;
     [SerializeField] private Transform startPosistion;
