@@ -5,7 +5,7 @@ using UnityEngine;
 namespace dialogue
 {
     [RequireComponent(typeof(AudioSource))]
-    public class GuardChaseYell : MonoBehaviour
+    public class GuardWhistle: MonoBehaviour
     {
         // Variable for target transform
         [SerializeField]
@@ -117,7 +117,7 @@ namespace dialogue
 
         private IEnumerator PlayYellCommand()
         {
-            while (true)
+            while (velocity >= 0.8f)
             {
                 if (velocity >= 1.8f && yellCounter == 0)
                 {
@@ -133,7 +133,6 @@ namespace dialogue
                     yield return null;
                 }
             }
-            
         }
     }
 }
