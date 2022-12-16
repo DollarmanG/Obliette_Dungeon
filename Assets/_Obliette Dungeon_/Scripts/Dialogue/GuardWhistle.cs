@@ -87,16 +87,12 @@ namespace dialogue
             velocity = ((targetTransform.position - previous).magnitude) / Time.deltaTime;
             previous = targetTransform.position;
 
-            //Debug.Log($"velocity = {velocity} and previous = {previous}");
-            Debug.Log($"velocity = {velocity} ");
-
-
-            if (velocity <= 0.5 && allowPlayStart == false && hasStartedOnce == false)
+            // If velocity is less than a minimum 
+            if ((velocity <= 0.5 || velocity > 1.8f) && allowPlayStart == false && hasStartedOnce == false)
             {
                 StopWhistle();
                 isPlaying = false;
                 hasStartedOnce = true;
-
             }
             else if (velocity > 0 && allowPlayStart == false && isPlaying == false && hasStartedOnce == true)
             {
@@ -115,7 +111,6 @@ namespace dialogue
         {
             if (whistleCounter == 0)
             {
-                Debug.Log($"whistle triggered velocity = {velocity}");
                 audioSource.PlayDelayed(5.0f);
                 whistleCounter++;
             }
@@ -123,7 +118,6 @@ namespace dialogue
 
         private void StopWhistle()
         {
-            Debug.Log("Stop whistle");
             audioSource.Stop();
             whistleCounter = 0;
         }  
