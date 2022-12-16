@@ -2621,7 +2621,8 @@ MonoBehaviour:
   myLoop: 1
   spatialization: 1
   myMaxDistance: 20
-  footstepMultiplier: 1
+  walkingFootstepMultiplier: 1.484
+  runningFootstepMultiplier: 0.77
 --- !u!82 &830367697
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2645,7 +2646,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0

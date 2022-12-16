@@ -60,9 +60,13 @@ namespace footsteps
         // Var to set time between each footstep
         private float footstepTimer = 1.0f;
 
-        // User controllable variable to set overall speed.
-        [SerializeField, Range(1, 2)]
-        private float footstepMultiplier = 1;
+        // Variable to set overall speed.
+        [SerializeField, Range(1.0f, 2.0f)]
+        private float walkingFootstepMultiplier = 1;
+
+        // Variable to set overall speed.
+        [SerializeField, Range(0.1f, 2.0f)]
+        private float runningFootstepMultiplier = 1;
 
         // Coroutine to start playback
         private IEnumerator coroutine;
@@ -81,8 +85,6 @@ namespace footsteps
         {
             // Get this object's audio source
             audioSource = GetComponent<AudioSource>();
-
-            coroutine = playFootsteps(velocity);
 
             // Set audio source settings at start.
             audioSource.playOnAwake = myPlayOnAwake;
@@ -113,6 +115,7 @@ namespace footsteps
             if (velocity == 0 && allowPlayStart == false && hasStartedOnce == false)
             {
                 Debug.Log("Stop coroutine");
+                StopCoroutine(playFootsteps(velocity));
                 isPlaying = false;
                 //allowPlayStart = true;
                 hasStartedOnce = true;
@@ -122,28 +125,41 @@ namespace footsteps
                 isPlaying = true;
                 allowPlayStart = true;
                 Debug.Log($"isPlaying = {isPlaying} & allowPlayStart = {allowPlayStart}");
-                //StartCoroutine(coroutine);
+                
             }
             else if (velocity > 0 && allowPlayStart && isPlaying && hasStartedOnce == true)
             {
                 Debug.Log("Start coroutine");
+                StartCoroutine(playFootsteps(velocity));
                 allowPlayStart = false;
                 hasStartedOnce = false;
-                
             }
-
-
         }
 
         private IEnumerator playFootsteps(float waitTime)
         {
-            resetPitch = 1.0f;
-            pitchOffset = Random.Range(-0.2f, 0.2f);
-            audioSource.pitch = resetPitch + pitchOffset;
-            audioSource.clip = walkClips[Random.Range(0, walkClips.Length)];
-            audioSource.PlayOneShot(audioSource.clip);
-            Debug.Log("footsteps triggered");
-            yield return new WaitForSeconds(waitTime);
+            while (velocity > 0.1f && velocity < 0.7f )
+            {
+                Debug.Log($"walking footstep triggered velocity = {velocity}");
+                resetPitch = 1.0f;
+                pitchOffset = Random.Range(-0.2f, 0.2f);
+                audioSource.pitch = resetPitch + pitchOffset;
+                audioSource.clip = walkClips[Random.Range(0, walkClips.Length)];
+                audioSource.PlayOneShot(audioSource.clip);
+                yield return new WaitForSeconds(waitTime * walkingFootstepMultiplier);
+            }
+            while (velocity >= 0.7f)
+            {
+                Debug.Log($"ruunin footstep triggered velocity = {velocity}");
+                resetPitch = 1.0f;
+                pitchOffset = Random.Range(-0.2f, 0.2f);
+                audioSource.pitch = resetPitch + pitchOffset;
+                audioSource.clip = runClips[Random.Range(0, walkClips.Length)];
+                audioSource.PlayOneShot(audioSource.clip);
+                yield return new WaitForSeconds(waitTime * runningFootstepMultiplier);
+            }
+
+
         }
     }
 }
