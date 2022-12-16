@@ -2312,7 +2312,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 285438bc0196e67499c876b80313b379, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 65342cde04f940648b1e3f83221f3348, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2916,6 +2916,7 @@ MonoBehaviour:
   canvasGroup: {fileID: 2101902985206352573}
   timeToFadeOut: 1
   timeToFadeIn: 0.3
+  loadTime: 0
 --- !u!1 &2101902985158408636
 GameObject:
   m_ObjectHideFlags: 0
