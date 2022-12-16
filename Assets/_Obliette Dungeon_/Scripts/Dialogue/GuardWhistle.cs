@@ -117,16 +117,21 @@ namespace dialogue
 
         private IEnumerator PlayWhistle()
         {
-            while (velocity >= 0.1f && velocity < 1.8f)
+            if (velocity >= 0.1f && velocity < 1.8f)
             {
                 if (whistleCounter == 0)
                 {
                     Debug.Log($"whistle triggered velocity = {velocity}");
-                    audioSource.PlayOneShot(audioSource.clip);
+                    audioSource.Play();
                     whistleCounter++;
                     yield return new WaitForSeconds(0.5f);
                 }
-            }
+                else
+                {
+                    audioSource.Stop();
+                    yield return new WaitForSeconds(0.5f);
+                }
+            } 
         }
     }
 }
