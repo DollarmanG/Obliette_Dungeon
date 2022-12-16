@@ -71,11 +71,15 @@ namespace dialogue
             // Set variable previous equal to target transform start position
             previous = targetTransform.position;
 
+            // Start conditions, audio is not playing and audio is not allowed to start.
             isPlaying = false;
             allowPlayStart = false;
+
+            // This condition is used to make sure that only the stop condition is valid at
+            // the start of each frame update.
             hasStartedOnce = false;
 
-            // Set yell counter to 0 to allow first yell
+            // Counter used to prevent triggering audio clip multiple times.
             whistleCounter = 0;
         }
 
@@ -87,28 +91,47 @@ namespace dialogue
             velocity = ((targetTransform.position - previous).magnitude) / Time.deltaTime;
             previous = targetTransform.position;
 
-            // If velocity is less than a minimum 
+            // If velocity is less than minimum walk speed, or greater than max walk speed, and playback is now allowed
+            // to start, stop whistling, set isPlaying to false (because playback is stopped).
+            // hasStarted is set to true so that audio now can play (after making sure that it has stopped at the start of the frame update).
             if ((velocity <= 0.5 || velocity > 1.8f) && allowPlayStart == false && hasStartedOnce == false)
             {
                 StopWhistle();
                 isPlaying = false;
                 hasStartedOnce = true;
             }
+
+            // If velocity is greater than zero, playback is not allowed to start, audio is not playing, 
+            // set alloPlayStart to true to reflect that audio can now start playing,
+            //  and set isPlaying to true to reflect that audio will start playing.
+
             else if (velocity > 0 && allowPlayStart == false && isPlaying == false && hasStartedOnce == true)
             {
                 isPlaying = true;
                 allowPlayStart = true;
             }
+
+            // If velocity is greater than minimum walk speed and less than or equal to max walk speed, and playback is now allowed
+            // to start, isPlaying is true (to reflect that audio will now start playing), and hasStartedOnce is true (since audio playback condition
+            // has been met), play whistle sound, set allowPlayStart to false (since audio clip should not be triggered again), and
+            // set has StartedOnce to false so that Stop is called at the start of the next fram update where the velocity is less 
+            // than the minimum walk speed.
+
             else if (velocity > 0.5 && velocity <=1.8 && allowPlayStart && isPlaying && hasStartedOnce == true)
             {
-                PlayWistle();
+                PlayWhistle();
                 allowPlayStart = false;
                 hasStartedOnce = false;
             }
         }
 
-        private void PlayWistle()
+        
+        private void PlayWhistle()
         {
+            // If the counter is equal to zero (i.e. sound has not been triggered since the last time
+            // the stop condition was met), play the sound after a five second delay, and increase the 
+            // counter by one so that the sound is not triggered for each frame update where the target
+            // velocity has the correct speed.
             if (whistleCounter == 0)
             {
                 audioSource.PlayDelayed(5.0f);
@@ -118,6 +141,8 @@ namespace dialogue
 
         private void StopWhistle()
         {
+            // Stop playback of the audio source, and set the whistleCounter to 0 so that playback can be
+            // triggered again the next time the playback condition is met.
             audioSource.Stop();
             whistleCounter = 0;
         }  
