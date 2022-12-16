@@ -91,48 +91,42 @@ namespace dialogue
             Debug.Log($"velocity = {velocity} ");
 
 
-            if (velocity == 0 && allowPlayStart == false && hasStartedOnce == false)
+            if (velocity <= 0.5 && allowPlayStart == false && hasStartedOnce == false)
             {
-                Debug.Log("Stop coroutine");
-                StopCoroutine(PlayWhistle());
+                StopWhistle();
                 isPlaying = false;
                 hasStartedOnce = true;
-                Debug.Log($"isPlaying = {isPlaying} & allowPlayStart = {allowPlayStart}");
+
             }
             else if (velocity > 0 && allowPlayStart == false && isPlaying == false && hasStartedOnce == true)
             {
                 isPlaying = true;
                 allowPlayStart = true;
-                Debug.Log($"isPlaying = {isPlaying} & allowPlayStart = {allowPlayStart}");
-
             }
-            else if (velocity > 0 && allowPlayStart && isPlaying && hasStartedOnce == true)
+            else if (velocity > 0.5 && velocity <=1.8 && allowPlayStart && isPlaying && hasStartedOnce == true)
             {
-                Debug.Log("Start coroutine");
-                StartCoroutine(PlayWhistle());
+                PlayWistle();
                 allowPlayStart = false;
                 hasStartedOnce = false;
             }
         }
 
-        private IEnumerator PlayWhistle()
+        private void PlayWistle()
         {
-            if (velocity >= 0.1f && velocity < 1.8f)
+            if (whistleCounter == 0)
             {
-                if (whistleCounter == 0)
-                {
-                    Debug.Log($"whistle triggered velocity = {velocity}");
-                    audioSource.Play();
-                    whistleCounter++;
-                    yield return new WaitForSeconds(0.5f);
-                }
-                else
-                {
-                    audioSource.Stop();
-                    yield return new WaitForSeconds(0.5f);
-                }
-            } 
+                Debug.Log($"whistle triggered velocity = {velocity}");
+                audioSource.PlayDelayed(5.0f);
+                whistleCounter++;
+            }
         }
+
+        private void StopWhistle()
+        {
+            Debug.Log("Stop whistle");
+            audioSource.Stop();
+            whistleCounter = 0;
+        }  
     }
 }
 
