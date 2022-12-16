@@ -95,8 +95,12 @@ namespace footsteps
             // Set variable previous equal to target transform start position
             previous = targetTransform.position;
 
+            // Start conditions, audio is not playing and audio is not allowed to start.
             isPlaying = false;
             allowPlayStart = false;
+
+            // This condition is used to make sure that only the stop condition is valid at
+            // the start of each frame update.
             hasStartedOnce = false;
         }
 
@@ -108,19 +112,32 @@ namespace footsteps
             velocity = ((targetTransform.position - previous).magnitude) / Time.deltaTime;
             previous = targetTransform.position;
 
-
+            // If velocity is zero (i.e. player is stopped), and playback is not allowed
+            // to start, stop coroutine that plays footstep sounds, and set isPlaying to false (because playback is stopped).
+            // hasStarted is set to true so that audio now can play (after making sure that it has stopped at the start of the frame update).
             if (velocity == 0 && allowPlayStart == false && hasStartedOnce == false)
             {
                 StopCoroutine(playFootsteps(velocity));
                 isPlaying = false;
                 hasStartedOnce = true;
             }
+
+            // If velocity is greater than zero, playback is not allowed to start, audio is not playing, 
+            // set allowPlayStart to true to reflect that audio can now start playing,
+            // and set isPlaying to true to reflect that audio will start playing.
+
             else if (velocity > 0 && allowPlayStart == false && isPlaying == false && hasStartedOnce == true)
             {
                 isPlaying = true;
                 allowPlayStart = true;
 
             }
+
+            // If velocity is greater than zero and playback is now allowed to start, isPlaying is true (to reflect that audio will
+            // now start playing), and hasStartedOnce is true (since audio playback condition has been met), start coroutine to play sound,
+            // set allowPlayStart to false (since audio clip should not be triggered again), and set hasStartedOnce to false so that Stop
+            // is called at the start of the next frame update where the velocity is less than the minimum walk speed.
+
             else if (velocity > 0 && allowPlayStart && isPlaying && hasStartedOnce == true)
             {
                 StartCoroutine(playFootsteps(velocity));
@@ -131,6 +148,10 @@ namespace footsteps
 
         private IEnumerator playFootsteps(float waitTime)
         {
+            // While player is walking, pull a random walking footstep clip and play it once with a
+            // random pitch. This is done at regular intervals based on the formula velocity times
+            // a user controlled multiplier (used to match footstep animation to sound).
+
             while (velocity > 0.1f && velocity < 2.6f)
             {
                 resetPitch = 1.0f;
@@ -140,6 +161,10 @@ namespace footsteps
                 audioSource.PlayOneShot(audioSource.clip);
                 yield return new WaitForSeconds(waitTime * walkingFootstepMultiplier);
             }
+
+            // While player is running, pull a random running footstep clip and play it once with a
+            // random pitch. This is done at regular intervals based on the formula velocity times
+            // a user controlled multiplier (used to match footstep animation to sound).
             while (velocity >= 2.6f)
             {
                 resetPitch = 1.0f;
@@ -149,8 +174,6 @@ namespace footsteps
                 audioSource.PlayOneShot(audioSource.clip);
                 yield return new WaitForSeconds(waitTime * runningFootstepMultiplier);
             }
-
-
         }
     }
 }

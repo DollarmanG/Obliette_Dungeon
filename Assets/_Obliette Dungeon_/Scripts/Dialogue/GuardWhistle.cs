@@ -91,7 +91,7 @@ namespace dialogue
             velocity = ((targetTransform.position - previous).magnitude) / Time.deltaTime;
             previous = targetTransform.position;
 
-            // If velocity is less than minimum walk speed, or greater than max walk speed, and playback is now allowed
+            // If velocity is less than minimum walk speed, or greater than max walk speed, and playback is not allowed
             // to start, stop whistling, set isPlaying to false (because playback is stopped).
             // hasStarted is set to true so that audio now can play (after making sure that it has stopped at the start of the frame update).
             if ((velocity <= 0.5 || velocity > 1.8f) && allowPlayStart == false && hasStartedOnce == false)
@@ -102,7 +102,7 @@ namespace dialogue
             }
 
             // If velocity is greater than zero, playback is not allowed to start, audio is not playing, 
-            // set alloPlayStart to true to reflect that audio can now start playing,
+            // set allowPlayStart to true to reflect that audio can now start playing,
             //  and set isPlaying to true to reflect that audio will start playing.
 
             else if (velocity > 0 && allowPlayStart == false && isPlaying == false && hasStartedOnce == true)
@@ -114,7 +114,7 @@ namespace dialogue
             // If velocity is greater than minimum walk speed and less than or equal to max walk speed, and playback is now allowed
             // to start, isPlaying is true (to reflect that audio will now start playing), and hasStartedOnce is true (since audio playback condition
             // has been met), play whistle sound, set allowPlayStart to false (since audio clip should not be triggered again), and
-            // set has StartedOnce to false so that Stop is called at the start of the next fram update where the velocity is less 
+            // set hasStartedOnce to false so that Stop is called at the start of the next frame update where the velocity is less 
             // than the minimum walk speed.
 
             else if (velocity > 0.5 && velocity <=1.8 && allowPlayStart && isPlaying && hasStartedOnce == true)
