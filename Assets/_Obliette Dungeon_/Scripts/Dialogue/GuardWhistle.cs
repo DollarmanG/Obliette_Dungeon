@@ -88,13 +88,13 @@ namespace dialogue
             previous = targetTransform.position;
 
             //Debug.Log($"velocity = {velocity} and previous = {previous}");
-            //Debug.Log($"velocity = {velocity} ");
+            Debug.Log($"velocity = {velocity} ");
 
 
             if (velocity == 0 && allowPlayStart == false && hasStartedOnce == false)
             {
                 Debug.Log("Stop coroutine");
-                StopCoroutine(PlayYellCommand());
+                StopCoroutine(PlayWhistle());
                 isPlaying = false;
                 hasStartedOnce = true;
                 Debug.Log($"isPlaying = {isPlaying} & allowPlayStart = {allowPlayStart}");
@@ -109,13 +109,13 @@ namespace dialogue
             else if (velocity > 0 && allowPlayStart && isPlaying && hasStartedOnce == true)
             {
                 Debug.Log("Start coroutine");
-                StartCoroutine(PlayYellCommand());
+                StartCoroutine(PlayWhistle());
                 allowPlayStart = false;
                 hasStartedOnce = false;
             }
         }
 
-        private IEnumerator PlayYellCommand()
+        private IEnumerator PlayWhistle()
         {
             while (velocity >= 0.1f && velocity < 1.8f)
             {
@@ -124,13 +124,7 @@ namespace dialogue
                     Debug.Log($"whistle triggered velocity = {velocity}");
                     audioSource.PlayOneShot(audioSource.clip);
                     whistleCounter++;
-                    yield return null;
-                }
-                else if (velocity < 0.1f || velocity > 1.8f)
-                {
-                    Debug.Log("Player is not at right speed for whistle");
-                    whistleCounter = 0;
-                    yield return null;
+                    yield return new WaitForSeconds(0.5f);
                 }
             }
         }
