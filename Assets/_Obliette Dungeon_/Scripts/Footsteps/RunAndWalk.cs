@@ -138,7 +138,7 @@ namespace footsteps
 
         private IEnumerator playFootsteps(float waitTime)
         {
-            while (velocity > 0.1f && velocity < 0.7f )
+            while (velocity > 0.01f && velocity < 1.71f )
             {
                 Debug.Log($"walking footstep triggered velocity = {velocity}");
                 resetPitch = 1.0f;
@@ -148,7 +148,7 @@ namespace footsteps
                 audioSource.PlayOneShot(audioSource.clip);
                 yield return new WaitForSeconds(waitTime * walkingFootstepMultiplier);
             }
-            while (velocity >= 0.7f)
+            while (velocity >= 1.71f)
             {
                 Debug.Log($"ruunin footstep triggered velocity = {velocity}");
                 resetPitch = 1.0f;
