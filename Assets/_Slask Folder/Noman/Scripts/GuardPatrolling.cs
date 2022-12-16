@@ -14,6 +14,16 @@ public class GuardPatrolling : MonoBehaviour
     [SerializeField] private float waypointTolerance = 1f;
     [SerializeField] private float waypointDwellTime = 3f;
 
+    // Yell command audio source
+    [SerializeField]
+    private AudioSource yellCommand;
+
+    [SerializeField]
+    private AudioSource whistle;
+
+    // Counter to prevent multiple yells
+    private int dialogueCounter;
+
     //this decides the speed of the character
     [Range(0, 1)][SerializeField] private float patrolSpeedFraction = 0.2f;
 
@@ -54,6 +64,8 @@ public class GuardPatrolling : MonoBehaviour
     {
         //this checks the guard position and makes sure there is no race conditions.
         guardPosition.ForceInit();
+
+        dialogueCounter = 0;
     }
 
     void Update()
@@ -96,9 +108,17 @@ public class GuardPatrolling : MonoBehaviour
                 {
                     //if it hits someone then it follows that target
                     target = obj.FollowTarget();
+                    if (dialogueCounter == 0)
+                    {
+                        yellCommand.PlayOneShot(yellCommand.clip);
+                        dialogueCounter++;
+                    }
+                    
                     return true;
                 }
             }
+
+            dialogueCounter = 0;
         }
 
         return false;
@@ -119,6 +139,7 @@ public class GuardPatrolling : MonoBehaviour
         //if there is a waypoint to go to then it should do what is inside the statement
         if (patrolPath != null)
         {
+
             if (AtWaypoint())
             {
                 timeSinceArrivedAtWaypoint = 0;
