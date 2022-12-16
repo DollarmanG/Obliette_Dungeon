@@ -1,14 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.XR;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
-
-namespace footsteps
+namespace dialogue
 {
     [RequireComponent(typeof(AudioSource))]
-    public class PlayerRunAndWalk : MonoBehaviour
+    public class GuardChaseYell : MonoBehaviour
     {
         // Variable for target transform
         [SerializeField]
@@ -22,13 +19,6 @@ namespace footsteps
 
         // Variable to get velocity
         private float velocity;
-
-        // Arrays to store variations of footsteps, walk and run
-        [SerializeField]
-        private AudioClip[] walkClips;
-
-        [SerializeField]
-        private AudioClip[] runClips;
 
         // Index variable for clip arrays
         private int randomIndex;
@@ -51,23 +41,6 @@ namespace footsteps
         // Var referring to this object's audio source.
         private AudioSource audioSource;
 
-        // Var to reset pitch each time new footstep is triggered
-        private float resetPitch = 1;
-
-        // Var to randomize pitch with offset
-        private float pitchOffset;
-
-        // Var to set time between each footstep
-        private float footstepTimer = 1.0f;
-
-        // Variable to set overall speed.
-        [SerializeField, Range(1.0f, 2.0f)]
-        private float walkingFootstepMultiplier = 1;
-
-        // Variable to set overall speed.
-        [SerializeField, Range(0.1f, 2.0f)]
-        private float runningFootstepMultiplier = 1;
-
         // Coroutine to start playback
         private IEnumerator coroutine;
 
@@ -79,6 +52,9 @@ namespace footsteps
 
         // Variable to prevent play at start
         private bool hasStartedOnce = false;
+
+        // Variable to prevent multiple yells
+        private int yellCounter;
 
         // Start is called before the first frame update
         void Start()
@@ -98,6 +74,9 @@ namespace footsteps
             isPlaying = false;
             allowPlayStart = false;
             hasStartedOnce = false;
+
+            // Set yell counter to 0 to allow first yell
+            yellCounter = 0;
         }
 
         private void Update()
@@ -108,49 +87,53 @@ namespace footsteps
             velocity = ((targetTransform.position - previous).magnitude) / Time.deltaTime;
             previous = targetTransform.position;
 
+            //Debug.Log($"velocity = {velocity} and previous = {previous}");
+            //Debug.Log($"velocity = {velocity} ");
+
 
             if (velocity == 0 && allowPlayStart == false && hasStartedOnce == false)
             {
-                StopCoroutine(playFootsteps(velocity));
+                Debug.Log("Stop coroutine");
+                StopCoroutine(PlayYellCommand());
                 isPlaying = false;
                 hasStartedOnce = true;
+                Debug.Log($"isPlaying = {isPlaying} & allowPlayStart = {allowPlayStart}");
             }
             else if (velocity > 0 && allowPlayStart == false && isPlaying == false && hasStartedOnce == true)
             {
                 isPlaying = true;
                 allowPlayStart = true;
+                Debug.Log($"isPlaying = {isPlaying} & allowPlayStart = {allowPlayStart}");
 
             }
             else if (velocity > 0 && allowPlayStart && isPlaying && hasStartedOnce == true)
             {
-                StartCoroutine(playFootsteps(velocity));
+                Debug.Log("Start coroutine");
+                StartCoroutine(PlayYellCommand());
                 allowPlayStart = false;
                 hasStartedOnce = false;
             }
         }
 
-        private IEnumerator playFootsteps(float waitTime)
+        private IEnumerator PlayYellCommand()
         {
-            while (velocity > 0.1f && velocity < 2.6f)
+            while (true)
             {
-                resetPitch = 1.0f;
-                pitchOffset = Random.Range(-0.2f, 0.2f);
-                audioSource.pitch = resetPitch + pitchOffset;
-                audioSource.clip = walkClips[Random.Range(0, walkClips.Length)];
-                audioSource.PlayOneShot(audioSource.clip);
-                yield return new WaitForSeconds(waitTime * walkingFootstepMultiplier);
+                if (velocity >= 1.8f && yellCounter == 0)
+                {
+                    Debug.Log($"walking footstep triggered velocity = {velocity}");
+                    audioSource.PlayOneShot(audioSource.clip);
+                    yellCounter++;
+                    yield return null;
+                }
+                else if (velocity < 1.8f)
+                {
+                    Debug.Log("Player is not fast enough");
+                    yellCounter = 0;
+                    yield return null;
+                }
             }
-            while (velocity >= 2.6f)
-            {
-                resetPitch = 1.0f;
-                pitchOffset = Random.Range(-0.2f, 0.2f);
-                audioSource.pitch = resetPitch + pitchOffset;
-                audioSource.clip = runClips[Random.Range(0, walkClips.Length)];
-                audioSource.PlayOneShot(audioSource.clip);
-                yield return new WaitForSeconds(waitTime * runningFootstepMultiplier);
-            }
-
-
+            
         }
     }
 }
