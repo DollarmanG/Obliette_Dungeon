@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hitbyaxe : MonoBehaviour
+public class WinLoader : MonoBehaviour
 {
     // Gets the Scenmaneger and acceses all the SceneLoader script on it
     [SerializeField] GameObject _sceanManeger;
@@ -12,9 +12,6 @@ public class Hitbyaxe : MonoBehaviour
     [SerializeField] GameObject _fadeOut;
     FadeScript fadeScript;
 
-    // Gets the adio component
-    [SerializeField] AudioSource _axeDeath;
-
     // Makes it posible to change the timing in serializedfild
     [SerializeField] float _fadeTime;
 
@@ -22,26 +19,24 @@ public class Hitbyaxe : MonoBehaviour
     [SerializeField] float _timeUntilSceneShift;
 
     private void Start()
-    {   
-        // this aplyse the coponent to sceneLoader so that e can acces all of all the funstions
+    {
+        // this aplyse the coponent to sceneLoader so that e can acces all the funstions
         sceneLoader = _sceanManeger.GetComponent<SceneLoader>();
 
         // This aplays the component to fadeScript so that it can acces all of the funstions
         fadeScript = _fadeOut.GetComponent<FadeScript>();
     }
-
-    // When player hits the colistion box, initiate the ivoke death scean funstion.  
     private void OnTriggerEnter(Collider other)
     {
         //this refers to a script in fade in script that changes the timmer
         fadeScript.TimeToFadeOut(_fadeTime);
         // Load Load time funstion from sceneLoader
         sceneLoader.LoadTime(_timeUntilSceneShift);
-        // Load Game over scean from sceanloader script
-        sceneLoader.InvokeLoadDeathScene();
-        // Load fade out funstion from fadeout script
+        // Load Win scean 
+        sceneLoader.InvokeNewSceneLoader();
+        // Load Fade out funstion
         fadeScript.FadeOut();
-        // Load sound clip ones
-        _axeDeath.PlayOneShot(_axeDeath.clip);
     }
+
+
 }

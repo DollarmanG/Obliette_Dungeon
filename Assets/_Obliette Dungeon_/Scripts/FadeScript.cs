@@ -15,13 +15,17 @@ public class FadeScript : MonoBehaviour
     public float timeToFadeOut;
     public float timeToFadeIn;
 
+    // Setts the general load time for all fades
+    [SerializeField] float loadTime;
+
     private void Start()
     {
         // This is calld first so a fade in happens when the scean is loaded. 
-        FadeIn();
+        InvokeFadeIn();
     }
     void Update()
     {   
+
         if (_fadeIn)
         {
             // This cheks if the alpha of the canvas is fully visible and if it is, then it will fade it out under a durastion. When it is att a desigerd fade then it stops fading it
@@ -48,6 +52,11 @@ public class FadeScript : MonoBehaviour
         }
     }
     // When this is calld then fade in on update vill will start
+    public void InvokeFadeIn()
+    {
+        Invoke("FadeIn", loadTime);
+    }
+    // When this is calld then fade in on update vill will start
     public void FadeIn()
     {
         _fadeIn = true;
@@ -56,5 +65,11 @@ public class FadeScript : MonoBehaviour
     public void FadeOut()
     {
         _fadeOut = true;
+    }
+    // Sets the time for time to fade when calld
+    public float TimeToFadeOut(float newTimeToFadeIn)
+    {
+        timeToFadeOut = newTimeToFadeIn;
+        return timeToFadeOut;
     }
 }

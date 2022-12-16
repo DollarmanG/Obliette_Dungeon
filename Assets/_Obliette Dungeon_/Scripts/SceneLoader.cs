@@ -35,6 +35,11 @@ public class SceneLoader : MonoBehaviour
     {
         Invoke("Quit", loadTime);
     }
+    public float LoadTime(float newLoadtime)
+    {
+        loadTime = newLoadtime;
+        return loadTime;
+    }
     public void InvokeLoadDeathScene()
     {
         Invoke("LoadDeathScene", loadTime);
