@@ -8,7 +8,7 @@ using static UnityEngine.GraphicsBuffer;
 namespace footsteps
 {
     [RequireComponent(typeof(AudioSource))]
-    public class RunAndWalk : MonoBehaviour
+    public class PlayerRunAndWalk : MonoBehaviour
     {
         // Variable for target transform
         [SerializeField]
@@ -26,7 +26,7 @@ namespace footsteps
         // Arrays to store variations of footsteps, walk and run
         [SerializeField]
         private AudioClip[] walkClips;
-        
+
         [SerializeField]
         private AudioClip[] runClips;
 
@@ -107,22 +107,30 @@ namespace footsteps
             // Thus velocity is equal to displacement / frame in seconds.
             velocity = ((targetTransform.position - previous).magnitude) / Time.deltaTime;
             previous = targetTransform.position;
-            
-            
+
+            //Debug.Log($"velocity = {velocity} and previous = {previous}");
+            //Debug.Log($"velocity = {velocity} ");
+
+
             if (velocity == 0 && allowPlayStart == false && hasStartedOnce == false)
             {
+                Debug.Log("Stop coroutine");
                 StopCoroutine(playFootsteps(velocity));
                 isPlaying = false;
                 //allowPlayStart = true;
                 hasStartedOnce = true;
-            } else if (velocity > 0 && allowPlayStart == false && isPlaying == false && hasStartedOnce == true)
+                Debug.Log($"isPlaying = {isPlaying} & allowPlayStart = {allowPlayStart}");
+            }
+            else if (velocity > 0 && allowPlayStart == false && isPlaying == false && hasStartedOnce == true)
             {
                 isPlaying = true;
                 allowPlayStart = true;
-                
+                Debug.Log($"isPlaying = {isPlaying} & allowPlayStart = {allowPlayStart}");
+
             }
             else if (velocity > 0 && allowPlayStart && isPlaying && hasStartedOnce == true)
             {
+                Debug.Log("Start coroutine");
                 StartCoroutine(playFootsteps(velocity));
                 allowPlayStart = false;
                 hasStartedOnce = false;
@@ -131,8 +139,9 @@ namespace footsteps
 
         private IEnumerator playFootsteps(float waitTime)
         {
-            while (velocity > 0.01f && velocity < 1.71f )
+            while (velocity > 0.1f && velocity < 2.6f)
             {
+                Debug.Log($"walking footstep triggered velocity = {velocity}");
                 resetPitch = 1.0f;
                 pitchOffset = Random.Range(-0.2f, 0.2f);
                 audioSource.pitch = resetPitch + pitchOffset;
@@ -140,8 +149,9 @@ namespace footsteps
                 audioSource.PlayOneShot(audioSource.clip);
                 yield return new WaitForSeconds(waitTime * walkingFootstepMultiplier);
             }
-            while (velocity >= 1.71f)
+            while (velocity >= 2.6f)
             {
+                Debug.Log($"running footstep triggered velocity = {velocity}");
                 resetPitch = 1.0f;
                 pitchOffset = Random.Range(-0.2f, 0.2f);
                 audioSource.pitch = resetPitch + pitchOffset;
