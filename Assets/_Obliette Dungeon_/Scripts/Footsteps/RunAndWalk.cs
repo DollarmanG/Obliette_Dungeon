@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.XR;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -66,6 +67,15 @@ namespace footsteps
         // Coroutine to start playback
         private IEnumerator coroutine;
 
+        // Variable to check if playback is occurring
+        private bool isPlaying;
+
+        // Variable to allow playback of footsteps sounds
+        private bool allowPlayStart;
+
+        // Variable to prevent play at start
+        private bool hasStartedOnce = false;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -83,7 +93,9 @@ namespace footsteps
             // Set variable previous equal to target transform start position
             previous = targetTransform.position;
 
-
+            isPlaying = false;
+            allowPlayStart = false;
+            hasStartedOnce = false;
         }
 
         private void Update()
@@ -94,12 +106,33 @@ namespace footsteps
             velocity = ((targetTransform.position - previous).magnitude) / Time.deltaTime;
             previous = targetTransform.position;
 
-            if(velocity > 0)
+            //Debug.Log($"velocity = {velocity} and previous = {previous}");
+            //Debug.Log($"velocity = {velocity} ");
+            
+            
+            if (velocity == 0 && allowPlayStart == false && hasStartedOnce == false)
             {
-                StartCoroutine(coroutine);
+                Debug.Log("Stop coroutine");
+                isPlaying = false;
+                //allowPlayStart = true;
+                hasStartedOnce = true;
+                Debug.Log($"isPlaying = {isPlaying} & allowPlayStart = {allowPlayStart}");
+            } else if (velocity > 0 && allowPlayStart == false && isPlaying == false && hasStartedOnce == true)
+            {
+                isPlaying = true;
+                allowPlayStart = true;
+                Debug.Log($"isPlaying = {isPlaying} & allowPlayStart = {allowPlayStart}");
+                //StartCoroutine(coroutine);
+            }
+            else if (velocity > 0 && allowPlayStart && isPlaying && hasStartedOnce == true)
+            {
+                Debug.Log("Start coroutine");
+                allowPlayStart = false;
+                hasStartedOnce = false;
+                
             }
 
-            //Debug.Log($"velocity = {velocity} and previous = {previous}");
+
         }
 
         private IEnumerator playFootsteps(float waitTime)
