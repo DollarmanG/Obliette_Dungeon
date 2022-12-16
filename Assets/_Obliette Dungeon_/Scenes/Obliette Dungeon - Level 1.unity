@@ -2733,7 +2733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20103ad005a951478938898b61ffe0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTransform: {fileID: 0}
+  targetTransform: {fileID: 6524184252427955870}
   myPlayOnAwake: 0
   myLoop: 1
   spatialization: 1
@@ -2759,7 +2759,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 40
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
