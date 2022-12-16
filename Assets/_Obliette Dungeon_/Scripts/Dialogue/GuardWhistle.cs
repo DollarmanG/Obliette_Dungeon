@@ -54,7 +54,7 @@ namespace dialogue
         private bool hasStartedOnce = false;
 
         // Variable to prevent multiple yells
-        private int yellCounter;
+        private int whistleCounter;
 
         // Start is called before the first frame update
         void Start()
@@ -76,7 +76,7 @@ namespace dialogue
             hasStartedOnce = false;
 
             // Set yell counter to 0 to allow first yell
-            yellCounter = 0;
+            whistleCounter = 0;
         }
 
         private void Update()
@@ -117,19 +117,19 @@ namespace dialogue
 
         private IEnumerator PlayYellCommand()
         {
-            while (velocity >= 0.8f)
+            while (velocity >= 0.1f && velocity < 1.8f)
             {
-                if (velocity >= 1.8f && yellCounter == 0)
+                if (whistleCounter == 0)
                 {
-                    Debug.Log($"walking footstep triggered velocity = {velocity}");
+                    Debug.Log($"whistle triggered velocity = {velocity}");
                     audioSource.PlayOneShot(audioSource.clip);
-                    yellCounter++;
+                    whistleCounter++;
                     yield return null;
                 }
-                else if (velocity < 1.8f)
+                else if (velocity < 0.1f || velocity > 1.8f)
                 {
-                    Debug.Log("Player is not fast enough");
-                    yellCounter = 0;
+                    Debug.Log("Player is not at right speed for whistle");
+                    whistleCounter = 0;
                     yield return null;
                 }
             }
