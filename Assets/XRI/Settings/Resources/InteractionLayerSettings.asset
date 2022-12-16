@@ -16,6 +16,7 @@ MonoBehaviour:
   - Default
   - Keyhole
   - DoorHandle
+  - AirSoundSmallObjects
   - 
   - 
   - 
@@ -39,9 +40,8 @@ MonoBehaviour:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - DungeonWalls
+  - Fireball
+  - FinalDoor
   - StoneElement
-  - 
   - Teleport

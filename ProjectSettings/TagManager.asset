@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Fireball
+  - FinalDoor
   layers:
   - Default
   - TransparentFX
@@ -21,9 +23,9 @@ TagManager:
   - Guard
   - Smallthingstograb
   - Heaysmallobj
-  - 
-  - 
-  - 
+  - Rocks
+  - Rockroof
+  - Invisrockwall
   - 
   - 
   - 
@@ -33,11 +35,11 @@ TagManager:
   - 
   - Player
   - 
+  - DungeonWalls
   - 
-  - 
-  - 
+  - FinalDoor
   - Fireball
-  - 
+  - Teleportation
   m_SortingLayers:
   - name: Default
     uniqueID: 0

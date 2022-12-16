@@ -9,6 +9,10 @@ namespace ActionHandler
     {
         IAction currentAction;
 
+        /// <summary>
+        /// this checks what action is being done and that it continues doing it unless another action is being called, and if it does, then the current action gets cancelled.
+        /// </summary>
+        /// <param name="action"></param>
         public void StartAction(IAction action)
         {
             if (currentAction == action) return;
