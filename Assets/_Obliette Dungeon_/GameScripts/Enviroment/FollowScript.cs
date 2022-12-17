@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FollowScript : MonoBehaviour
 {
+    //initiate variables
     public Transform target;
     private Rigidbody rb;
     // Start is called before the first frame update
@@ -12,13 +13,10 @@ public class FollowScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // This is called every Physics frames
     private void FixedUpdate()
     {
+        //This moves the game objekt towords the targeted game objekt
         rb.MovePosition(target.transform.position);
     }
 }
