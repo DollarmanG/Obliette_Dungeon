@@ -71,23 +71,23 @@ public class FallingRocks : MonoBehaviour
         rockfallPosition = rockfallTransform.position;
     }
 
-    public void startSmallRockFall()
+    public void StartSmallRockFall()
     {
         // Set coroutine variable equal to desired version of rockfall.
-        coroutine = instantiateSmallRockFall(timeBetweenInstantiatingSmallRocks);
+        coroutine = InstantiateSmallRockFall(timeBetweenInstantiatingSmallRocks);
 
         StartCoroutine(coroutine);
     }
     
-    public void startLargeRockFall()
+    public void StartLargeRockFall()
     {
         // Set coroutine variable equal to desired version of rockfall.
-        coroutine = instantiateLargeRockFall(timeBetweenInstantiatingLargeRocks);
+        coroutine = InstantiateLargeRockFall(timeBetweenInstantiatingLargeRocks);
 
         StartCoroutine(coroutine);
     }
 
-    private IEnumerator instantiateSmallRockFall(float waitTime)
+    private IEnumerator InstantiateSmallRockFall(float waitTime)
     {
         for (int i = 0; i < maxNumberOfSmallRocks; i++)
         {
@@ -119,7 +119,7 @@ public class FallingRocks : MonoBehaviour
         StopCoroutine(coroutine);
     }
     
-    private IEnumerator instantiateLargeRockFall(float waitTime)
+    private IEnumerator InstantiateLargeRockFall(float waitTime)
     {
         for (int i = 0; i < maxNumberOfLargeRocks; i++)
         {

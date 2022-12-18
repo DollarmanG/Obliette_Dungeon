@@ -165,7 +165,7 @@ namespace rockfall
                 dustParticleStateOne.Play();
 
                 // Start small rock fall.
-                fallingRocks.startSmallRockFall();
+                fallingRocks.StartSmallRockFall();
 
                 // Play first rockfall oneshot
                 rockfallOne.PlayOneShot(rockfallOne.clip);
@@ -199,7 +199,7 @@ namespace rockfall
                 dustParticleStateTwo.Play();
 
                 // Start large rockfall
-                fallingRocks.startLargeRockFall();
+                fallingRocks.StartLargeRockFall();
 
                 // Play second rockfall oneshot
                 rockfallTwo.PlayOneShot(rockfallTwo.clip);
