@@ -62,7 +62,6 @@ namespace rockfall
             randomizeVolume = Random.Range(-0.199f, -0.05f);
             rockImpact.volume = stateOneVolumeReset + randomizeVolume;
             rockImpact.PlayOneShot(rockImpact.clip);
-            Debug.Log(rockImpact.clip + " " + rockImpact.pitch + " " + rockImpact.volume);
         }
 
         private void playLargeImpactSound()
@@ -76,7 +75,6 @@ namespace rockfall
             randomizeVolume = Random.Range(-0.3f, 0.1f);
             rockImpact.volume = stateOneVolumeReset + randomizeVolume;
             rockImpact.PlayOneShot(rockImpact.clip);
-            Debug.Log(rockImpact.clip + " " + rockImpact.pitch + " " + rockImpact.volume);
         }
 
     }
